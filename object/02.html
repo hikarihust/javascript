@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Object</title>
+<script type="text/javascript">
+
+	var enter = "<br />";
+	// Cách 02
+	var myValidate2 = new function(){
+		
+		// Thuộc tính
+		this.data	=	"This is a test";
+		this.msg	=	"This is a test 2";
+	}
+
+	document.write("Type of: " + typeof myValidate2 + enter);				// object
+	document.write("Properties - data: " + myValidate2.data + enter);		// This is a test
+	document.write("Properties - msg: " + myValidate2.msg);		// This is a test 2
+</script>
+</head>
+
+<body>
+	<h3>Ghi chú:Tạo ra thuộc tính và truy cập vào thuộc tính</h3>
+</body>
+</html>
