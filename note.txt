@@ -5,3 +5,5 @@
 	- Khởi tạo ra 1 đối tượng trực tiếp, ở đây thì do mình tạo 1 đối tượng trực tiếp nên không cần
 		phải tạo phần thể hiện của nó.
 - Tạo ra các thuộc tính và phương thức cho đối tượng và truy cập vào giá trị của thuộc tính đó
+- Phương thức và cách truy cập vào phương thức, cách viết làm sao cho dễ nhìn, dễ thấy có bao nhiêu
+	phương thức
