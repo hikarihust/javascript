@@ -15,3 +15,5 @@
 		định nghĩa của đối tượng đó mà thôi, mà không thể sử dụng ở phần thể hiện của đối tượng đó.
 	Thuộc tính ở trạng thái private thì mình không thể truy cập trực tiếp được mà phải truy cập thông qua
 		một phương thức khác của đối tượng đó
+
+- Truyền đối tượng vào đối tượng
