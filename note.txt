@@ -2,4 +2,5 @@
 - 3 cách thường sử dụng để tạo ra 1 đối tượng
 	- Dùng function, nó cũng được coi là 1 đối tượng
 	- this + tên của đối tượng
-	- Khởi tạo ra 1 đối tượng trực tiếp
+	- Khởi tạo ra 1 đối tượng trực tiếp, ở đây thì do mình tạo 1 đối tượng trực tiếp nên không cần
+		phải tạo phần thể hiện của nó.
