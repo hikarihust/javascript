@@ -1,0 +1,5 @@
+								Object
+- 3 cách thường sử dụng để tạo ra 1 đối tượng
+	- Dùng function, nó cũng được coi là 1 đối tượng
+	- this + tên của đối tượng
+	- Khởi tạo ra 1 đối tượng trực tiếp
