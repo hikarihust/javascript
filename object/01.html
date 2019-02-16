@@ -18,6 +18,16 @@
 	var myObj2 = new myValidate2();
 	document.write("<br />" + "Type of: " + typeof myObj2);
 
+	// Cach viet khac
+	var myObj2b = new function() {
+	    this.type = "macintosh";
+	    this.color = "red";
+	    this.getInfo = function () {
+	        return this.color + ' ' + this.type + ' apple';
+	    };
+	}
+	document.write("<br />" + "Type of: " + typeof myObj2b);
+
 	// Cách 03: Tạo ra 1 đối tượng bằng cách tạo trực tiếp
 	var myObj3 = {}
 	document.write("<br />" + "Type of: " + typeof myObj3);
