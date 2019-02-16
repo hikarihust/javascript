@@ -7,3 +7,11 @@
 - Tạo ra các thuộc tính và phương thức cho đối tượng và truy cập vào giá trị của thuộc tính đó
 - Phương thức và cách truy cập vào phương thức, cách viết làm sao cho dễ nhìn, dễ thấy có bao nhiêu
 	phương thức
+
+- Public và private: 
+	Nếu biến hoặc phương thức được đặt ở trạng thái public thì nó sẽ được sử dụng
+		ở trong đối tượng đó cũng như là ở trong phần thể hiện của đối tượng đó.
+		Còn nếu như phương thức hoặc thuộc tính ở trạng thái private thì nó chỉ được sử dụng ở trong phần
+		định nghĩa của đối tượng đó mà thôi, mà không thể sử dụng ở phần thể hiện của đối tượng đó.
+	Thuộc tính ở trạng thái private thì mình không thể truy cập trực tiếp được mà phải truy cập thông qua
+		một phương thức khác của đối tượng đó
