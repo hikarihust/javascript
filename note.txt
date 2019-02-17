@@ -18,3 +18,7 @@
 
 - Truyền đối tượng vào đối tượng
 - Truyền giá trị vào phương thức
+- Kế thừa: Tạo ra 1 đối tượng con mà nó kế thừa các phương thức và thuộc tính của phương thức cha, lúc này
+	đối tượng con được tạo ra nó có thể sử dụng tất các thuộc tính cũng như là phương thức đã được định 
+	nghĩa bởi đối tượng cha.
+	--> dùng từ khóa call.
