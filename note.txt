@@ -17,3 +17,4 @@
 		một phương thức khác của đối tượng đó
 
 - Truyền đối tượng vào đối tượng
+- Truyền giá trị vào phương thức
