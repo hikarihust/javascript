@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Object</title>
+<script type="text/javascript">
+
+	var enter = "<br />";
+	
+	this.myBox = function(){
+		
+		// Thuộc tính
+		this.text	=	""; // Thuộc tính text dùng để chứa nội dung 
+		this.attr	= 	"";	// Thuộc tính về màu sắc, màu chữ, kích thước chiều rộng, kích thước chiều cao...
+		
+		// Phương thức
+		this.createBox 	= createBox;   // Phương thức ở trạng thái public
+ 		var createStyle = createStyle; // Phương thức ở trạng thái private
+		
+		// Xây dựng phương thức
+		function createBox(attr, text){
+			// console.log(attr);
+			var result;
+			var style = createStyle(attr);
+			// console.log(style);
+			
+			result = "<div style='" + style + "'>" + text + "</div>";
+			return result;
+		}
+		
+		function createStyle(attr){
+			var style = "text-align:center; margin-top:20px;";
+			
+			style += " width:" + attr[0];
+			style += "; height:" + attr[1];
+			style += "; background:" + attr[2];
+			style += "; color:" + attr[3];
+			style += "; line-height:" + attr[1];
+			
+			return style;
+		}
+	}
+	
+	var box = new myBox();
+	document.write(box.createBox(["200px","100px","yellow","red"],"Box 01"));
+	document.write(box.createBox(["200px","200px","blue","black"],"Box 02"));
+	document.write(box.createBox(["50px","60px","#12bb2a","#3017e6"],"Box 03"));
+</script>
+</head>
+
+<body>
+	<h3>Ghi chú: Ôn tập về Object trong Javascript</h3>
+</body>
+</html>

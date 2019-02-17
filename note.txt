@@ -22,3 +22,7 @@
 	đối tượng con được tạo ra nó có thể sử dụng tất các thuộc tính cũng như là phương thức đã được định 
 	nghĩa bởi đối tượng cha.
 	--> dùng từ khóa call.
+- Ôn tập kiến thức về Object trong Javascript
+	Tạo ra đối tượng để tạo ra các hình vẽ
+	Để vẽ ra được các box thì cần có chiều rộng, chiều cao, màu nền, màu chữ và nội dung văn bản nằm ở trong
+	box đó là gì
