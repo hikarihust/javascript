@@ -26,3 +26,48 @@
 	Tạo ra đối tượng để tạo ra các hình vẽ
 	Để vẽ ra được các box thì cần có chiều rộng, chiều cao, màu nền, màu chữ và nội dung văn bản nằm ở trong
 	box đó là gì
+
+-----------------------------------------------------------------------------------------------------------
+
+						jQuery - Plugin
+
+Zoom Plugin:
+- Học cách sử dụng các phương thức sẵn có của jQuery để viết lên 1 Plugin
+- Sau khi nghiên cứu xong các phương thức trong tập hợp các phương thức của jQuery, thì tiếp theo mình sẽ
+	nghiên cứu đến jQuery Plugin.
+- jQuery Plugin là 1 phương thức để ta sử lý 1 vấn đề nào đó.
+	Ví dụ ta có Add() là 1 phương thức của jQuery, thì ở đây Plugin nó cũng có tác dụng giống như phương thức 
+	Add(), có nghĩa là ban đầu mình xác định 1 phần tử của jQuery rồi sau đó gọi đến Plugin mà mình sử lý.
+- Khi muốn xây dụng 1 ứng dụng nào đó, sử dụng cách viết của jQuery Plugin để cho nó thuận tiện và dễ di chuyển
+	Plugin đó qua các ứng dụng khác.
+- Thường thì Plugin sẽ được viết trong 1 tập tin js sau đó nhúng tập tin đó vào ứng dụng của mình
+- zoom.plugin.js --> nhìn vào tên file mình sẽ biết được đó là 1 tập tin như thế nào(plugin)
+
+- Ứng dụng viết 1 Plugin để phóng to và thu nhỏ.
+	- Chúng ta có thể sử dụng 1 phương thức trong phần hiệu ứng để thực hiện điều này đó là animate() nhưng ở đây
+		mình sẽ viết thành 1 Plugin để sử dụng, để qua đó hiểu được Plugin trong jQuery là như thế nào
+	- (function($){})(jQuery) --> Đây là 1 cú pháp viết 1 Plugin trong jQuery, cú pháp này được jQuery khuyên dùng
+		vì nó sẽ hạn chế được phần conflict giữa các framework khác nhau.
+	- (function($){
+		$.fn.zoomIt = function(options){};
+	  })(jQuery);
+	  Hàm bên trong chính là mã nguồn của Plugin để chúng ta sử dụng
+	  zoomIt: Là tên của Plugin
+	-$(document).ready(function(){
+		$("#zoomIn").click(function(e) {
+	        $("#box").zoomIt({width: 80, height: 70})
+					 .removeClass("bg01").addClass("bg02");
+	    });
+		
+		$("#zoomOut").click(function(e) {
+	        $("#box").zoomIt({width: 120, height: 130})
+					 .removeClass("bg02").addClass("bg01");
+	    });
+	});
+		--> Đôi khi thì không cần phải đưa đoạn mã chạy hàm nào đó vào trong tập tin html mà có thể đưa vào trong tập
+			tin js rồi sau đó nhúng vào html --> mã html sẽ dễ nhìn hơn, dễ tìm kiếm hơn
+	- extend: options = $.extend(defaults,options)
+		Sẽ nhận được giá trị defaults mới và gán giá trị mói đó cho biến options. Đối tượng options sẽ đè lên các 
+		giá trị trong đối tượng defaults và sẽ sẽ bổ sung vào các giá trị mà trong đối tượng defaults không có.
+	- animate: Dựa vào phương thức này thì mình có thể thay đổi được kích thước
+	- return this: Để khi mình viết 1 Plugin, sử dụng nó và ta có thể sử dụng tiếp các phương thức của jQuery cung cấp
