@@ -71,3 +71,25 @@ Zoom Plugin:
 		giá trị trong đối tượng defaults và sẽ sẽ bổ sung vào các giá trị mà trong đối tượng defaults không có.
 	- animate: Dựa vào phương thức này thì mình có thể thay đổi được kích thước
 	- return this: Để khi mình viết 1 Plugin, sử dụng nó và ta có thể sử dụng tiếp các phương thức của jQuery cung cấp
+
+----------------------------------
+
+Simple slider plugin:
+- Là 1 Slide để cho các ảnh chuyển động
+- Để biến div#slide thành 1 phần trình diễn ảnh thì mình sẽ sử dụng 1 Plugin đó là simpleSlide.
+- Ở đây thì cách gọi Plugin trong phần Zoom
+	$("#box").zoomIt({width: 120, height: 130}) --> Ở phía trước là đối tượng mình tương tác
+	$.simpleSlide("#slide",{'itemDefault': 2,'from': 'az','auto': true}) --> Không có đối tượng ở phía trước, đối tượng
+		tương tác sẽ nằm ở trong phần tham số
+	--> Ta sẽ nghiên cứu thêm 1 cách viết Plugin khác
+- setInterval(): Phương thức này có 2 tham số, tham số thứ nhất là 1 function, tham số thứ 2 là time để thực hiện hàm đó
+	phương thức setInterval() này được gọi liên tục cho đến khi phương thức clearInterval() được gọi thì dừng lại
+- fadeOut(): Ẩn đi đối tượng, có hiệu ứng khác với --------hide()
+- fadeIn(): Hiển thị đối tượng, có hiệu ứng khác với -------show()
+- eq(): Lấy ra 1 phần tử trong tập hợp với chỉ số index được truyền vào, chỉ số được đánh dấu từ 0
+- children(): Lấy ra tập hợp các phần tử con, khác với find() là children() chỉ lấy ở cấp con còn find() thì lấy hết cả 
+	các phần tử cháu...
+- title: Là thuộc tính mình tự thêm vào
+- find(): Tìm trong selector --> tính tất cả các level con, cháu
+- text(): Đưa nội dung vào trong thẻ -------------value(), html()
+- attr(): Lấy giá trị thuộc tính của thẻ
