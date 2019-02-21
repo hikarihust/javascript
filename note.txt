@@ -93,3 +93,55 @@ Simple slider plugin:
 - find(): Tìm trong selector --> tính tất cả các level con, cháu
 - text(): Đưa nội dung vào trong thẻ -------------value(), html()
 - attr(): Lấy giá trị thuộc tính của thẻ
+
+-----------------------------------------------------------------------------------------------------------
+
+							Xây Dựng Ứng Dụng jQuery
+
+Autocomplete:
+----------- Không truyền vào Selector: Ở phần viết Plugin này mình sẽ biết thêm 1 cách viết plugin nữa đó là không cần
+	truyền vào đó là selector gì.
+- Đây là ứng dụng rất thực tế và thường được sử dụng trong các ứng dụng Web
+- Ứng dụng bao gồm ô Textbox thì nó sẽ lấy ra tiêu đề của các cuốn sách nằm ở phía trong của phân Database, ứng với mỗi
+	một tiêu đề được hiện ra được gắn vào 1 đường link để khi click vào đó sẽ chuyển đến trang của quyến sách tương ứng
+- Khi có 1 danh sách quá dài thì không thể sử dụng SlectBox để liệt kê tất cả những giá trị ở trong đó ra mà nên sử dụng
+	AutoComplete để lấy ra được Id của nó
+- 2 ứng dụng: link và Id
+	Khi không có link thì khi click vào 1 item result thì nó sẽ lấy id và truyền vào ô text box ẩn, và giá trị được click
+	sẽ nằm vào trong ô input keywords
+- mID: Ô input ẩn, lưu lại ID trong trường hợp cần ID để Submit Form truyền sang 1 trang sử lý nào đó
+- div.results: Thẻ để đưa vào kết quả tìm kiếm
+- val(): Lấy giá trị trong ô input ---- html(), text()
+- Khi ta thực hiện click hoặc focus vào ô tìm kiếm, nếu giá trị trong ô đó là "Enter keyword here..." thì nó sẽ xóa trắng
+	đồng thời xóa luôn các thuộc tính mình đã thiết lập style cho "Enter keyword here..."
+	--> cần 2 sự kiện cùng 1 lúc đó là focus và click
+- Khi đang focus vào trong ô input keyword không có nội dung gì mà click chuột ra ngoài thì ô input đó sẽ lại hiện thị lên 
+	câu thông báo vào trong ô input "Enter keyword here..."
+	Trong trường hợp trong ô input có dữ liệu mà dời focus ra khỏi ô đó thì vẫn giữ lại dữ liệu đã nhập
+- on(): tham số đầu tiên là các sự kiện, gắn vào cùng 1 hàm sử lý cho cùng 1 đối tượng cho các sự kiện khác nhau
+- blur(): Dời khỏi ô input keyword, không con focus lên đối tượng nữa, nó cũng có thể xảy khi mà mình nhấn nút Tab
+- Hiển thị kết quả, đó là 1 danh sách ---> sử dụng <ul>, <li>
+- list-style: none inside ---> Không hiển thị icon của <li>, khoảng cách sẽ được tính từ phía bên trong của <ul>
+- Thiết lập cho thẻ div.results có độ dài bằng với ô input ----> dùng jQuery để thực hiện thiết lập kích thước, vị trí
+- Kết quả hiện thị là 1 list bao gồm các thẻ <li>, khi mà hơ chuột lên các thẻ <li> đó thì sẽ làm đổi màu background, khi hơ
+	lên <li> thì sẽ hiển thị con trỏ chuột
+- white-space: Thuộc tính của nhóm text, định dạng cho các khoảng trắng, giá trị nowrap thì xuống dòng được quy về thành 1 
+	khoảng trắng bình thường-----> hiển thị dữ liệu mà không bị xuống dòng
+- title: Thuộc tính này của phần tử có tác dụng là khi di chuột lên đối tượng đó thì có thể nhìn được phần nội dung gán vào title
+- Ajax:
+	dataType ---> Kiểu dữ liệu trả về
+	data ----> Dữ liệu truyền lên server
+	done() Sau khi truyền dữ liệu lên-->thành công-->tiếp theo sẽ thực hiện hành động mong muốn
+	LIKE '%{$keyword}%'   ---------   LIMIT {$limit} ------ Cách đặt biến mà không cần dùng dấu "." để nối
+- html(): Có thể đưa vào giá trị chuỗi có định dạng html  ---- val(), text()
+- $books = array(); --> Cần phải khai báo là 1 mảng rỗng từ ban đầu, để khi không có kết quả tìm kiếm thì vẫn trả dc về bên ajax là
+						một đối tượng ajax rỗng và kiểm tra dc length của đối tượng json trả về là 0 
+- each(array, callback): Hàm callback sẽ được thực hiện lặp lại từ 0->length-1 lần và thực hiện xét duyệt các giá trị của array
+- $(div.result ul li) --> lấy được phần tử li là con của ul, div.result
+- toggleClass(): Thực hiện thêm or xóa đi class được truyền vào  --------- tonggle() thực hiện ẩn hiện phần tử
+- pTitle, pLink: Cách đặt tên để phân biệt với title và link của các thuộc tính trong html
+- attr(): Giúp lấy được các giá trị thuộc tính của phần tử html  ------------------- prop()
+- Khi nhấn ra phía ngoài thì box kết quả tìm kiếm phải được ẩn đi, hoặc khi 1 item được chọn thì box result cũng phải được biến mất
+	-----> blur(). Nhưng ở đây thì khi click vào 1 đối tượng nào đó thì ô input cũng bị mất focus---> cần dùng dến delay()
+- slideUp(): Ẩn đi 1 đối tượng sử dụng hiệu ứng chuyển động sliding 
+- results.delay(200).slideUp(300): Đợi sau 200ms thì mới thực hiện slideUp
