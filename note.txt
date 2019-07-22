@@ -146,7 +146,7 @@ Autocomplete:
 - slideUp(): Ẩn đi 1 đối tượng sử dụng hiệu ứng chuyển động sliding 
 - results.delay(200).slideUp(300): Đợi sau 200ms thì mới thực hiện slideUp
 
-====================================================== Selectbox ======================================================
+====================================================== Multi Selectbox ======================================================
 
 Sử lý vấn đề 3 SelectBox liên quan đến nhau:
 	SelectBox thứ nhất: Chứa tên các thành phố ở Việt Nam
@@ -154,16 +154,24 @@ Sử lý vấn đề 3 SelectBox liên quan đến nhau:
 	SelectBox thứ 3: Các phường, các xã của các quận mà ta chọn
 	Sau khi chọn 1 tỉnh bất kỳ ở SelectBox thứ nhất thì trong SelectBox thứ 2 sẽ hiển thị lên hàng loạt các quận huyện của tỉnh đó
 		Sau khi nhấn chọn 1 quận bất kỳ ở SelectBox thứ 2 thì trong SelectBox thứ 3 sẽ xuất hiện các phường xã của quận đó
-Cấu trúc Database:
-	Bảng cities:
-		id: id của các thành phố
-		name: Tên của các thành phố
-		order: Sắp xếp vị trí của các thành phố
-		status: Trạng thái là 1 thì hiển thị thành phố đó, là 0 thì không hiển thị
-	Bảng districts:
-		cityid: Quận huyện đó thuộc vào thành phố nào(khóa ngoại của bảng districts)
-	Bảng ward:
-		districtid: Là cột chứa khóa ngoại chứa id của quận mà phường xã này nằm trong đó
-Tạo giao diện cho index và kết nối với cơ sở dữ liệu
-Sau khi kết nối được với mysql thì chọn 1 database nằm trong mysql
-Để người ta không thể xem được cấu trúc thư mục files thì tạo thêm 1 file index.html trong thư mục files
+	Cấu trúc Database:
+		Bảng cities:
+			id: id của các thành phố
+			name: Tên của các thành phố
+			order: Sắp xếp vị trí của các thành phố
+			status: Trạng thái là 1 thì hiển thị thành phố đó, là 0 thì không hiển thị
+		Bảng districts:
+			cityid: Quận huyện đó thuộc vào thành phố nào(khóa ngoại của bảng districts)
+		Bảng ward:
+			districtid: Là cột chứa khóa ngoại chứa id của quận mà phường xã này nằm trong đó
+	Tạo giao diện cho index và kết nối với cơ sở dữ liệu
+	Sau khi kết nối được với mysql thì chọn 1 database nằm trong mysql
+	Để người ta không thể xem được cấu trúc thư mục files thì tạo thêm 1 file index.html trong thư mục files
+
+Tạo ra tập tin để lấy ra được dữ liệu ở trong Database location(getdata.php), Đưa dữ liệu vào trong phần tử SelectBox đầu tiên
+	Lấy dữ liệu ra và đổ vào trong các SelecBox thì có 2 cách đó là lấy theo kiểu thông thường, hoặc lấy theo kiểu Ajax
+	mysqli_query($link, "set names 'utf8'") để có thế lấy ra được dữ liệu ở định dang utf8
+	Để truyền được 1 mảng sang cho javascrip thì cần phải dùng json_encode() để chuyển mảng đó thành chuỗi json rồi đưa vào trong
+		js rồi sau đó dùng ------------- để chuyển 1 chuỗi json từ PHP để chuyển thành 1 đối tượng trong js
+	Lấy theo kiểu thông thường khôn gdungf đến ajax thì đoạn mã js phải nằm trong tập tin php mà không được tách riêng file js
+	empty(): Phương thức này sẽ loại bỏ tất cả các phần tử con nằm trong selector đó

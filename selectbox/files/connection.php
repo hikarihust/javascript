@@ -9,4 +9,6 @@
 		echo "can not select Database";
 		exit();
 	}
+
+	mysqli_query($link, "set names 'utf8'");
 ?>

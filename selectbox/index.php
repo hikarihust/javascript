@@ -1,3 +1,6 @@
+<?php 
+  require_once("files/getdata.php");
+?>
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -8,7 +11,24 @@
     <link rel="stylesheet" type="text/css" href="css/selectbox.css">
     <script src="js/jquery-1.10.0.min.js"></script>
     <script src="js/cities.js"></script>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var cityObj = $.parseJSON('<?php echo $cityObj;?>');
+        addData("#city", cityObj, '-- Select a City --');
+
+        function addData(selector, dataObj, text) {
+          $(selector).empty();
+          $(selector).append('<option value="0">'+ text +'</option>');
+
+          if(dataObj.length > 0) {
+            $.each(dataObj, function(i, val) {
+              var opt = '<option value="'+ val.id +'">'+ val.name +'</option>';
+              $(selector).append(opt);
+            });
+          }
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="wrapper">
