@@ -9,6 +9,7 @@
 		$cityArr[] = array('id' => $row['id'], 'name' => $row['name']);
 	}
 
+	$cityObj = json_encode($cityArr);
 	// =========================================================================================
 	// Đưa dữ liệu trong bảng District vào 1 mảng
 	$districtSql = "SELECT * FROM `districts` WHERE `status`=1 ORDER BY `order` ASC, `name` ASC";
@@ -19,6 +20,7 @@
 		$districtArr[$row['cityid']][] = array('id' => $row['id'], 'name' => $row['name']);
 	}
 
+	$districtObj = json_encode($districtArr);
 	// =========================================================================================
 	// Đưa dữ liệu trong bảng Ward vào 1 mảng
 	$wardSql = "SELECT * FROM `ward` WHERE `status`=1 ORDER BY `order` ASC, `name` ASC";
@@ -29,9 +31,5 @@
 		$wardArr[$row['districtid']][] = array('id' => $row['id'], 'name' => $row['name']);
 	}
 
-	$data = array();
-	$data['cities'] = $cityArr;
-	$data['district'] = $districtArr;
-	$data['ward'] = $wardArr;
-	echo json_encode($data);
+	$wardObj = json_encode($wardArr);
 ?>

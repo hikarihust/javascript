@@ -183,3 +183,6 @@ Xử lý cho phần Districts:
 
 Xử lý cho phần Ward:
   Khi SelecBox quận huyện thay đổi giá trị thì các giá trị mới sẽ được load vào trong SelecBox phường xã
+
+Thực hiện bằng Ajax:
+  Đưa phần xử lý js vào trong tập tin cities.js
