@@ -175,3 +175,8 @@ Tạo ra tập tin để lấy ra được dữ liệu ở trong Database locati
 		js rồi sau đó dùng ------------- để chuyển 1 chuỗi json từ PHP để chuyển thành 1 đối tượng trong js
 	Lấy theo kiểu thông thường khôn gdungf đến ajax thì đoạn mã js phải nằm trong tập tin php mà không được tách riêng file js
 	empty(): Phương thức này sẽ loại bỏ tất cả các phần tử con nằm trong selector đó
+
+Xử lý cho phần Districts:
+  Tạo ra 1 mảng dữ liệu có cấu trúc là:
+    array(cityid=>array(id, name))
+  Khi thay đổi giá trị ở Select Box city thì sẽ load lên giá trị ở phía trong Select Box District

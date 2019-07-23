@@ -12,22 +12,33 @@
     <script src="js/jquery-1.10.0.min.js"></script>
     <script src="js/cities.js"></script>
     <script type="text/javascript">
-      $(document).ready(function(){
+      $(document).ready(function() {
         var cityObj = $.parseJSON('<?php echo $cityObj;?>');
-        addData("#city", cityObj, '-- Select a City --');
+        var districtObj = $.parseJSON('<?php echo $districtObj;?>');
 
-        function addData(selector, dataObj, text) {
-          $(selector).empty();
-          $(selector).append('<option value="0">'+ text +'</option>');
-
-          if(dataObj.length > 0) {
-            $.each(dataObj, function(i, val) {
-              var opt = '<option value="'+ val.id +'">'+ val.name +'</option>';
-              $(selector).append(opt);
-            });
-          }
-        }
+        addData("#city", cityObj, '-- Select a City --', '*');
+        $('#city').change(function() {
+          var cityID = $(this).find(':selected').val();
+          addData("#district", districtObj, '-- Select a District --', cityID);
+        });
       });
+
+      function addData(selector, dataObj, text, parentID) {
+        $(selector).empty();
+        $(selector).append('<option value="0">'+ text +'</option>');
+        if (parentID === '*') {
+          var optObj = dataObj;
+        } else if(parentID > 0) {
+          var optObj = dataObj[parentID];
+        }
+
+        if(optObj.length > 0) {
+          $.each(optObj, function(i, val) {
+            var opt = '<option value="'+ val.id +'">'+ val.name +'</option>';
+            $(selector).append(opt);
+          });
+        }
+      }
     </script>
   </head>
   <body>

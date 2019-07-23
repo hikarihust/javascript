@@ -10,4 +10,15 @@
 	}
 
 	$cityObj = json_encode($cityArr);
+	// =========================================================================================
+	// Đưa dữ liệu trong bảng District vào 1 mảng
+	$districtSql = "SELECT * FROM `districts` WHERE `status`=1 ORDER BY `order` ASC, `name` ASC";
+	$districtData = mysqli_query($link, $districtSql);
+	$districtArr = array();
+
+	while ($row=mysqli_fetch_assoc($districtData)) {
+		$districtArr[$row['cityid']][] = array('id' => $row['id'], 'name' => $row['name']);
+	}
+
+	$districtObj = json_encode($districtArr);
 ?>
