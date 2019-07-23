@@ -15,11 +15,17 @@
       $(document).ready(function() {
         var cityObj = $.parseJSON('<?php echo $cityObj;?>');
         var districtObj = $.parseJSON('<?php echo $districtObj;?>');
+        var wardObj = $.parseJSON('<?php echo $wardObj;?>');
 
         addData("#city", cityObj, '-- Select a City --', '*');
         $('#city').change(function() {
           var cityID = $(this).find(':selected').val();
           addData("#district", districtObj, '-- Select a District --', cityID);
+        });
+
+        $('#district').change(function() {
+          var districtID = $(this).find(':selected').val();
+          addData("#ward", wardObj, '-- Select a Ward --', districtID);
         });
       });
 

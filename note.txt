@@ -180,3 +180,6 @@ Xử lý cho phần Districts:
   Tạo ra 1 mảng dữ liệu có cấu trúc là:
     array(cityid=>array(id, name))
   Khi thay đổi giá trị ở Select Box city thì sẽ load lên giá trị ở phía trong Select Box District
+
+Xử lý cho phần Ward:
+  Khi SelecBox quận huyện thay đổi giá trị thì các giá trị mới sẽ được load vào trong SelecBox phường xã
