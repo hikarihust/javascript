@@ -203,3 +203,35 @@ Cú pháp: try - catch
   Các câu lệnh nằm trong nhóm try sẽ đượ thực hiện, nếu mà nó có lỗi phát sinh thì nó sẽ nhảy sang nhóm catch
 Throw: Với việc sử dụng Throw thì có thể tùy biến các thông báo lỗi
   Khi thực hiện các câu lệnh trong Try mà gặp lỗi thì dừng lại và throw ra câu thông báo lỗi
+
+============================================================================================================
+                                                    BOM
+============================================================================================================
+BOM: Browser Object Model
+Cho phép Javascript thao tác với trình duyệt
+Bao gồm các đối tượng: Window, Screen, Location, History, Navigator, PopupAlert, Timming, Cookies
+
+================================================ JS Window =================================================
+Javascript Window Object đại diện cho cửa sổ đang mở trên trình duyệt
+Cung cấp các thuộc tính và các phương thức để thao tác các cửa sổ đang làm việc
+Các đối tượng con của Javascript Window:
+  document: Trả về đối tượng Document của cửa sổ
+  history: Trả về đối tượng History của cửa sổ
+  location: Trả về đối tượng Location của cửa sổ
+  navigator: Trả về đối tượng Navigator của cửa sổ
+  screen: Trả về đối tượng Screen của cửa sổ
+Các hộp thoại:
+  alert: Hiển thị hộp thoại thông báo và nút nhấn OK
+    window.alert('This is a text') = alert('This is a text')
+  confirm: Hiển thị hộp thoại thông báo xác nhận cùng nút nhấn OK và Cancel
+    Nhấn OK trả về true
+    Nhấn Cancel trả về false
+  prompt: Hiển thị hộp thoại thông báo cho người dùng nhập vào 1 giá trị nào đó, kết quả trả về là giá trị đã nhập
+- JavaScript Popup Boxes:
+  Người dùng sẽ nhập tên của sinh viên vào rồi nhấn nút Add student
+  Khi nhấn nút xong thì sinh viên vừa nhập sẽ được thêm vào phần danh sách, chỉ thực hiện thêm khi đã nhập dữ liệu vào ô input
+  Nếu sinh viên không được nhập mà nhấn nút Add student thì sẽ hiển lên câu thông báo là "dữ liệu không được rỗng"
+  Khi nhấn nút Add student thì sẽ kết hợp với việc dùng các hộp thoại như:
+    alert: Thông báo khi người dùng không nhập dữ liệu
+    confirm: Để xác nhận là người dùng có chắc chắn muốn Add student hay không
+  Xử lý thêm tình huống là tên của sinh viên không phải thêm từ ô input nữa mà là được thêm từ hộp thoại nào đó
