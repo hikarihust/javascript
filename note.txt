@@ -249,3 +249,17 @@ Các hộp thoại:
         false: Không thay thế tài liệu hiện tại trong danh sách lịch sử mà nó sẽ tạo ra lịch sử mới
   close: Đóng cửa sổ đang mở lại
   closed: Thuộc tính dùng để kiểm tra cửa sổ đã được đóng hay chưa
+- Kích thước cửa sổ, Mở cửa sổ đó nằm ở chính giữa trình duyệt
+  innerHeight: Thiết lập hoặc trả về chiều cao phần chứa nội dung của một cửa sổ
+  innerWidth: Thiết lập hoặc trả về chiều rộng của phần chứa nội dung của cửa sổ
+  outerHeight: Thiết lập hoặc trả về chiều cao của cửa sổ(kể cả phần toolbar và scrollbars)
+  outerWidth: Thiết lập hoặc trả về chiều rộng của cửa sổ(kể cả phần toolbar và scrollbars)
+  Áp dụng các thuộc tính trên để khi mở 1 trình duyệt thì nó luôn nằm chính giữa trình duyệt
+- Tọa độ của trình duyệt so với phần màn hình:
+  screenLeft: Trả về tọa độ x của cửa sổ so với màn hình(Không hoạt động trên Firefox)
+  screenTop: Trả về tọa độ y của cửa sổ so với màn hình(Không hoạt động trên Firefox)
+  screenX: Trả về tọa độ x của cửa sổ so với màn hình(Firefox)
+  screenY: Trả về tọa độ y của cửa sổ so với màn hình(Firefox)
+  Biết cách lấy tọa độ của trình duyệt so với màn hình
+  => Căn giữa phần cửa sổ, mặc dù phần trình duyệt có thu hẹp đến mức nào đi chăng nữa
+  Khi định dạng theo top và left thì giá trị này được tính là so với màn hình chứ ko phài là so với trình duyệt

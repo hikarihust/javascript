@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BOM</title>
+	<script type="text/javascript">
+
+		var newWin = "";
+		function callOpen () {
+			var outerHeight = window.outerHeight;
+			var outerWidth 	= window.outerWidth;
+			var top 		= (outerHeight - 500)/2;
+			var left        = (outerWidth - 400)/2;
+			var specs       = "width=500";
+				specs	   += ",height=400";
+				specs	   += ",top=" + top;
+				specs	   += ",left=" + left;
+
+			newWin = window.open('', 'New windows', specs);
+			newWin.document.write('This is a text ' + newWin.name);
+		}
+
+		function callClose () {
+			if (newWin) {
+				if (newWin.closed) {
+					alert('Cửa sổ đã đóng');	
+				} else {
+					newWin.close();	
+				}
+			} else {
+				alert('Cửa sổ chưa mở');
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="Open window" onclick="callOpen();">
+	<input type="button" value="Close window" onclick="callClose();">
+</body>
+</html>
