@@ -201,3 +201,5 @@ Cú pháp: try - catch
     Handle errors here
   }
   Các câu lệnh nằm trong nhóm try sẽ đượ thực hiện, nếu mà nó có lỗi phát sinh thì nó sẽ nhảy sang nhóm catch
+Throw: Với việc sử dụng Throw thì có thể tùy biến các thông báo lỗi
+  Khi thực hiện các câu lệnh trong Try mà gặp lỗi thì dừng lại và throw ra câu thông báo lỗi
