@@ -235,3 +235,17 @@ Các hộp thoại:
     alert: Thông báo khi người dùng không nhập dữ liệu
     confirm: Để xác nhận là người dùng có chắc chắn muốn Add student hay không
   Xử lý thêm tình huống là tên của sinh viên không phải thêm từ ô input nữa mà là được thêm từ hộp thoại nào đó
+
+- Đóng, mở cửa sổ:
+  open: Mở 1 cửa sổ mới
+    window.open(URL, name, specs, replace)
+      URL: Địa chỉ của trang muốn mở, nếu không truyền vào thì giá trị mặc định sẽ là about:blank
+      name: Chế độ xuất hiện của cửa sổ mới(_blank, _parent, _self, _top) hoặc truyền vào name(thuộc tính name) nào đó
+        _blank cũng chính là giá trị mặc định khi không truyền vào
+      specs: Thiết lập các thuộc tính của cửa sổ mới muốn mở: width, height, top, left...
+        scrollbars=no: Trên trình duyệt Chrome thì thanh scrollbar vẫn xuất hiện nhưng trên IE thì không
+      replace: Tham số này ít khi sử dụng
+        true: Thay thế tài liệu hiện tại trong lịch sử
+        false: Không thay thế tài liệu hiện tại trong danh sách lịch sử mà nó sẽ tạo ra lịch sử mới
+  close: Đóng cửa sổ đang mở lại
+  closed: Thuộc tính dùng để kiểm tra cửa sổ đã được đóng hay chưa
