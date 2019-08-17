@@ -186,3 +186,18 @@ Xử lý cho phần Ward:
 
 Thực hiện bằng Ajax:
   Đưa phần xử lý js vào trong tập tin cities.js
+
+====================================================== JS Error ======================================================
+
+Xử dụng Throw, Try và Catch để xử lý các vấn đề gây ra lỗi trong lập trình js
+Trong lập trình có những ngoại lệ mà chúng ta ít để ý tới:
+  Phép chia 2 số a cho b, khi b bằng 0
+  Đọc và ghi file nhưng file chưa được tạo hay không có
+  Chưa điền dữ liệu vào text box nhưng vẫn đưa ra xử lý
+Cú pháp: try - catch
+  try {
+    Run some code here
+  } catch (err) {
+    Handle errors here
+  }
+  Các câu lệnh nằm trong nhóm try sẽ đượ thực hiện, nếu mà nó có lỗi phát sinh thì nó sẽ nhảy sang nhóm catch
