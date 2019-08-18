@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BOM</title>
+	<script type="text/javascript">
+		var myProcess;
+		// function beginWrite() {
+		// 	myProcess = setTimeout(function() {
+		// 		document.getElementById("content").innerHTML += "Hello <br />";
+		// 	}, 1000);
+		// }
+		
+		// Sử dụng đệ quy
+		function beginWrite() {
+			document.getElementById("content").innerHTML += "Hello <br />";
+			myProcess = setTimeout("beginWrite()", 1000);
+		}
+
+		function stopWrite() {
+			clearTimeout(myProcess);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="Write" onclick="beginWrite();">
+	<input type="button" value="Stop" onclick="stopWrite();">
+	<div id="content"></div>
+</body>
+</html>

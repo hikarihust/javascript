@@ -263,3 +263,12 @@ Các hộp thoại:
   Biết cách lấy tọa độ của trình duyệt so với màn hình
   => Căn giữa phần cửa sổ, mặc dù phần trình duyệt có thu hẹp đến mức nào đi chăng nữa
   Khi định dạng theo top và left thì giá trị này được tính là so với màn hình chứ ko phài là so với trình duyệt
+- JavaScript Timming: Có thể thiết lập thời gian để gọi 1 số đoạn code nào đó. Điều này còn được gọi là 'Timming events'
+  setInterval(): Phương thức này giúp thực hiện 1 mã lệnh sau 1 khoảng thời gian quy định
+    Tham số cần tryền vào là code và delay, ở đây code là 1 function thực hiện nhiệm vụ nào đó
+  clearInterval(): Khi muốn hủy các hàm được gọi bởi setInterval
+  setTimeout(): Thực hiện mã lệnh tại 1 time quy định(ví dụ như là sau khi người dùng vào trình duyệt 5s thì chúng ta sẽ  
+    thực hiện 1 nhiệm vụ gì đó)
+    Trong 1 số trường hợp có thể sử dụng setTimeout giống như là setInterval
+    Muốn thực hiện setTimeout giống như setInterval thì phải dùng đệ quy
+  clearTimeout(): Ngừng các mã lệnh được đã được gọi bởi setTimeout()
