@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BOM</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px
+		}
+
+		.content {
+			width: 400px;
+			margin: 10px auto;
+			text-align: center;
+		}
+
+		.content .box {
+			height: 300px;
+			background: #0F9;
+			line-height: 300px;
+			margin: 0px 10px 10px 0px;
+			font-size: 20px
+		}
+
+		.content a {
+			font-size: 20px;
+			text-decoration: none;
+			display: inline-block;
+			background: #C33;
+			padding: 3px 8px;
+			margin-bottom: 10px;
+			width: 150px;
+			color: #FFF;
+		}
+	</style>
+
+	
+	<script type="text/javascript">
+		var process;
+		var delay = 100;
+		var scrollAmount = 20;
+		var scrollTopAmount = -20;
+
+		function getYOffset() {
+			var yOffset;
+			if(typeof(window.pageYOffset) === "number") {
+				yOffset = window.pageYOffset;
+			} else {
+				yOffset = document.documentElement.scrollTop;
+			}
+
+			return yOffset;
+		}
+
+		function animateScroll() {
+			var yOffset = getYOffset();
+			console.log(document.body.scrollHeight);
+			console.log(yOffset);
+			if(parseInt(yOffset) >= document.body.scrollHeight) {
+				console.log(1);
+				clearInterval(process);
+			} else {
+				window.scrollBy(0, scrollAmount);
+			}
+		}
+
+		function goBottom() {
+			process = setInterval(animateScroll, delay)
+		}
+
+		function animateScrollTop() {
+			var yOffset = getYOffset();
+			if(parseInt(yOffset) >= 0) {
+				window.scrollBy(0, scrollTopAmount);
+			} else {
+				clearInterval(processTop);
+			}
+		}
+
+		function goTop() {
+			processTop = setInterval(animateScrollTop, delay)
+		}
+	</script>
+</head>
+<body>
+	<div class="content">
+		<a href="javascript:goBottom();">Go to bottom</a>
+		<div class="box"> Box 01</div>
+		<div class="box"> Box 02</div>
+		<div class="box"> Box 03</div>
+		<div class="box"> Box 04</div>
+		<div class="box"> Box 05</div>
+		<div class="box"> Box 06</div>
+		<a href="javascript:goTop();">Go to Top</a>
+	</div>
+</body>
+</html>

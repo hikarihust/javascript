@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BOM</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px
+		}
+
+		.content {
+			width: 2400px;
+			margin: 10px auto
+		}
+
+		.content .box {
+			width: 400px;
+			background: #0F9;
+			line-height: 200px;
+			text-align: center;
+			margin: 0px 10px 10px 0px;
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+		}
+
+		.content .box a{
+			font-size: 20px;
+			text-decoration: none
+		}
+	</style>
+
+	
+	<script type="text/javascript">
+		function getXOffset() {
+			var xOffset = window.pageXOffset;
+			if(typeof(window.pageXOffset) !== "number") {
+				xOffset = document.documentElement.scrollLeft;
+			}
+			
+			return xOffset;
+		}
+
+		function callScrollTo() {
+			window.scrollTo(200, 0);
+		}
+	</script>
+</head>
+<body>
+	<div class="content">
+		<div class="box">
+			<a href="javascript:callScrollTo();">Scroll(Position 1)</a>
+		</div>
+		<div class="box">
+			<a href="javascript:callScrollTo();">Scroll(Position 2)</a>
+		</div>
+		<div class="box">
+			<a href="javascript:callScrollTo();">Scroll(Position 3)</a>
+		</div>
+		<div class="box">
+			<a href="javascript:callScrollTo();">Scroll(Position 4)</a>
+		</div>
+		<div class="box">
+			<a href="javascript:callScrollTo();">Scroll(Position 5)</a>
+		</div>
+	</div>
+</body>
+</html>

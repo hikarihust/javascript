@@ -309,3 +309,18 @@ Các hộp thoại:
   resizeTo(): Cũng thay đổi kích thước, tuy nhiên thì nó chỉ thay đổi 1 lần đúng vào giá trị mà mình đã truyền vào
   Ứng dụng: Khi nhấn vào Open Window thì 1 cửa sổ xuất hiện, nhấn vào resizeTo thì cửa sổ này nó sẽ xuất hiện đúng với
     phần chiều rộng và chiều cao của cửa sổ hiện tại và đè lên trên cùng 1 vị trí so vớis cửa sổ hiện tại
+- Scroll: Thao tác với thanh trượt của cửa sổ
+  scrollBy(xnum, ynum): Cuộn nội dung trong cửa sổ theo chiều ngang là xnum(pixel), theo chiều dọc là ynum(pixel)
+  scrollTo(xpos, ypos): Cuộn nội dung trong cửa sổ đến vị trí xpos và ypos
+  pageXOffset: Trả về giá trị pixel khi di chuyển thanh cuộn(theo chiều ngang)
+  pageYOffset: Trả về giá trị pixel khi di chuyển thanh cuộn(theo chiều dọc) 
+    Đối với các trình duyệt IE7, 8 thì giá trị pageXOffset và pageYOffset là undefine mà giá trị này được xác định bởi
+      document.documentElement.scrollTop và document.documentElement.scrollLeft;
+    Để khắc phục lỗi không định dạng được display: inline-block trên IE7 thì dùng:
+    	zoom: 1;
+			*display: inline;
+    scrollTo(): Nó chỉ di chuyển Scroll đến 1 tọa độ nào đó nhất định
+  Ứng dụng: Khi nhấn vào Go to bottom thì phần trang Web của ta sẽ nhẩy về phần cuối -> Scroll sẽ nằm ở cuối trang
+    di chuyển 1 đoạn document.body.scrollHeight
+    100ms cho di chuyển 20px
+  Đang ở phía dưới, khi nhấn vào Go to top thì phần Scroll sẽ di chuyển lên phía trên

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BOM</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px
+		}
+
+		.content {
+			width: 400px;
+			margin: 10px auto
+		}
+
+		.content .box {
+			height: 200px;
+			background: #0F9;
+			line-height: 200px;
+			text-align: center;
+			margin-bottom: 10px
+		}
+
+		.content .box a{
+			font-size: 20px;
+			text-decoration: none
+		}
+	</style>
+
+	
+	<script type="text/javascript">
+		function getYOffset() {
+			var yOffset;
+			if(typeof(window.pageYOffset) === "number") {
+				yOffset = window.pageYOffset;
+			} else {
+				yOffset = document.documentElement.scrollTop;
+			}
+
+			return yOffset;
+		}
+
+
+		function callScrollBy() {
+			window.scrollBy(0, 200);
+			alert(getYOffset());
+		}
+	</script>
+</head>
+<body>
+	<div class="content">
+		<div class="box">
+			<a href="javascript:callScrollBy();">Scroll(Position 1)</a>
+		</div>
+		<div class="box">
+			<a href="javascript:callScrollBy();">Scroll(Position 2)</a>
+		</div>
+		<div class="box">
+			<a href="javascript:callScrollBy();">Scroll(Position 3)</a>
+		</div>
+		<div class="box">
+			<a href="javascript:callScrollBy();">Scroll(Position 4)</a>
+		</div>
+		<div class="box">
+			<a href="javascript:callScrollBy();">Scroll(Position 5)</a>
+		</div>
+	</div>
+</body>
+</html>
