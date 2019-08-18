@@ -272,3 +272,5 @@ Các hộp thoại:
     Trong 1 số trường hợp có thể sử dụng setTimeout giống như là setInterval
     Muốn thực hiện setTimeout giống như setInterval thì phải dùng đệ quy
   clearTimeout(): Ngừng các mã lệnh được đã được gọi bởi setTimeout()
+  Xây dựng chương trình đồng hồ điện tử
+    Để hiển thị giá trị thời gian thì dùng đối tượng Date để hiển thị
