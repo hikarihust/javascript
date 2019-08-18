@@ -274,3 +274,6 @@ Các hộp thoại:
   clearTimeout(): Ngừng các mã lệnh được đã được gọi bởi setTimeout()
   Xây dựng chương trình đồng hồ điện tử
     Để hiển thị giá trị thời gian thì dùng đối tượng Date để hiển thị
+  Ẩn hiển một bức tranh kết hợp setTimeout() và thuộc tính opacity của CSS
+    Khi nhấn Hidden thì giảm dần giá trị opacity để cho nó giảm dần về 0
+    Khi nhấn Show thì tăng dần giá trị của opacity từ 0 lên 1
