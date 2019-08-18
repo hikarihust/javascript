@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BOM</title>
+	<script type="text/javascript">
+		var newWin1;
+		var newWin2;
+		function callOpen1() {
+			newWin1 = window.open('', '', "width=200, height=250, top=200, left=400");
+			newWin1.document.write('New window 1');
+		}	
+
+		function callOpen2() {
+			newWin2 = window.open('', '', "width=250, height=300, top=300, left=600");
+			newWin2.document.write('New window 2');
+			newWin1.focus();
+		}	
+	</script>
+</head>
+<body>
+	<input type="button" value="Open window 1" onclick="callOpen1();">
+	<input type="button" value="Open window 2" onclick="callOpen2();">
+</body>
+</html>

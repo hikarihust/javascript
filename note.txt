@@ -287,3 +287,15 @@ Các hộp thoại:
       1s = 100 ms;
     Lúc hiển thị thì kiểm tra xem các giá trị phút, giây, mili giây có mấy chữ số, nếu có 1 thì cho nó hiển thị ở dạng có
       2 chữ số
+- Các thuộc tính của JS Window(Tìm hiểu về frames):
+  defaultStatus: Thiết lập hoặc trả về giá trị nội dung mặc định trên thanh trạng thái của 1 cửa sổ nào đó(Opera only)
+  frames: Trả về 1 mảng các frames trong cửa sổ hiện tại
+  length: Trả về số lượng frames trong cửa sổ hiện tại
+  name: Thiết lập hoặc trả về giá trị name của 1 cửa sổ nào đó
+  status: Thiết lập hoặc trả về giá trị nội dung mặc định trên thanh trạng thái của 1 cửa sổ nào đó(Opera only)
+  Thực hành cách thay thế tất cả các phần src bởi iframe bởi 1 iframe nào đó
+    Phải lấy được danh sách các frames, duyệt qua danh sách các frames và thay thế src cho nó
+- Các phương thức focus và blur
+  focus(): Thiết lập cửa sổ ở trạng thái focus(làm nổi bật)
+  blur(): Hủy bỏ trạng thái focus của 1 cửa sổ nào đó
+  Lần lượt mở các cửa số thứ nhất và thứ 2, khi mở cửa sổ thứ hai thì cửa sổ thứ nhất nó cũng phải hiển thị
