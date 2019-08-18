@@ -277,3 +277,13 @@ Các hộp thoại:
   Ẩn hiển một bức tranh kết hợp setTimeout() và thuộc tính opacity của CSS
     Khi nhấn Hidden thì giảm dần giá trị opacity để cho nó giảm dần về 0
     Khi nhấn Show thì tăng dần giá trị của opacity từ 0 lên 1
+  Xây dựng chương trình đồng hồ bấm giờ
+    Ô input hiển thị thời gian
+    Khi nhấn nút Start thì thời gian chạy
+    Nhấn nút Pause thì dừng lại
+    Nhấn nút Reset để quay về trạng thái ban đầu(00:00:00)
+    Đồng hồ hiển thị các giá trị là phút:giây:mili giây
+      1 phút = 60s
+      1s = 100 ms;
+    Lúc hiển thị thì kiểm tra xem các giá trị phút, giây, mili giây có mấy chữ số, nếu có 1 thì cho nó hiển thị ở dạng có
+      2 chữ số
