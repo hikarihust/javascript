@@ -303,3 +303,9 @@ Các hộp thoại:
   moveBy(): Di chuyển cửa sổ đến một tọa độ nào đó so với vị trí hiện tại của cửa sổ
   moveTo(): Di chuyển cửa sổ đến 1 tọa độ nào đó so với màn hình
   Ứng dụng để di chuyển 1 cửa sổ window đến 4 góc của trình duyệt
+- Resize: Thay đổi kích thước cửa sổ
+  resizeBy(): Thay đổi kích thước cửa sổ theo chiều cao và chiều rộng được truyền vào và nó sẽ thay đổi so với vị trí hiện
+    tại của cửa sổ được mở
+  resizeTo(): Cũng thay đổi kích thước, tuy nhiên thì nó chỉ thay đổi 1 lần đúng vào giá trị mà mình đã truyền vào
+  Ứng dụng: Khi nhấn vào Open Window thì 1 cửa sổ xuất hiện, nhấn vào resizeTo thì cửa sổ này nó sẽ xuất hiện đúng với
+    phần chiều rộng và chiều cao của cửa sổ hiện tại và đè lên trên cùng 1 vị trí so vớis cửa sổ hiện tại
