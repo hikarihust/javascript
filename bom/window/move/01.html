@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BOM</title>
+	<script type="text/javascript">
+		var myWin;
+
+		function openWindow() {
+			myWin = window.open('', 'New window', 'width=200, height=200, top=300, left=400');
+			myWin.document.write('Name: ' + myWin.name);
+		}
+
+		function moveByWindow() {
+			myWin.moveBy(10, 100);
+			myWin.focus();
+		}
+
+		function moveToWindow() {
+			myWin.moveTo(100, 100);
+			myWin.focus();
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="Open window" onclick="openWindow();">
+	<input type="button" value="Move by" onclick="moveByWindow();">
+	<input type="button" value="Move to" onclick="moveToWindow();">
+	<div id="content"></div>
+</body>
+</html>

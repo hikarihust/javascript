@@ -299,3 +299,7 @@ Các hộp thoại:
   focus(): Thiết lập cửa sổ ở trạng thái focus(làm nổi bật)
   blur(): Hủy bỏ trạng thái focus của 1 cửa sổ nào đó
   Lần lượt mở các cửa số thứ nhất và thứ 2, khi mở cửa sổ thứ hai thì cửa sổ thứ nhất nó cũng phải hiển thị
+- Move: Di chuyển cưa sổ
+  moveBy(): Di chuyển cửa sổ đến một tọa độ nào đó so với vị trí hiện tại của cửa sổ
+  moveTo(): Di chuyển cửa sổ đến 1 tọa độ nào đó so với màn hình
+  Ứng dụng để di chuyển 1 cửa sổ window đến 4 góc của trình duyệt
