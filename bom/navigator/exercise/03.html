@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        var enter = "<br />";
+
+        function checkPlugin(pluginName) {
+            var isExist = false;
+            var listPlugins = navigator.plugins;
+            var patt = new RegExp(pluginName, "igm");
+   
+            for (let key in listPlugins) {
+                if (patt.test(listPlugins[key].name)) {
+                    return true;
+                }
+            }
+            return isExist;
+        }
+
+        var checkPlugin = checkPlugin('Native Client');
+        if (checkPlugin) document.write('Tim thay');
+        else document.write('Khong tim thay');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

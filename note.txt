@@ -331,3 +331,44 @@ Các hộp thoại:
     Nó giúp ta thao tác với phần cửa sổ hiển tại
     window.close() = window.self.close()
   top: Trả về cửa sổ trên cùng của trình duyệt
+
+================================================ JS Navigator =================================================
+Đối tượng này sẽ cung cấp cho ta các thông tin về trình duyệt web hay còn gọi là Browser. Các thông tin đó bao gồm tên, phiên bản của trình 
+  duyệt, các plugin được cài đặt trong trình duyệt
+Đa số các phương thức và thuộc tính của Navigator đều được hỗ trợ bởi các trình duyệt phổ biến hiện nay
+- Properties & Methods:
+  Các thuộc tính:
+    appCodeName: Trả về code name của trình duyệt
+    appName: Trả về tên của trình duyệt
+    appVersion: Trả về thông tin phiên bản của trình duyệt
+    cookieEnabled: Kiểm tra các tập tin cookie đã được bật hay chưa? kết quả trả về là giá trị thuộc đối tượng Boolean(true/
+    false, 1/0)
+    online: Kiểm tra trình duyệt có được thiết lập ở trạng thái online hay không
+    platform: Trả về phiên bản (platform) mà trình duyệt đang được thực thi
+    userAgent: Trả về giá trị user-agent được gửi đến server bởi trình duyệt
+    laguage(systemLanguage): Trả về ngôn ngữ mà trình duyệt đang được thiết lập
+      en, vi-VN, en-US 
+    plugins: Trả về danh sách các plugs được tích hợp trên trình duyệt 
+  Các phương thức:
+    javaEnabled(): Kiểm tra trình duyệt có hỗ trợ Java hay không? Kết quả trả về thuộc đối tượng Boolean(true/false, 1/0)
+    taintEnabled(): Kiểm tra trình duyệt có hỗ trợ 'data tainting' hay không? phương thức này chỉ hỗ trợ trình duyệt IE và Opera
+Thực hành: Các phương thức và thuộc tính của Navigator cũng ít khi sử dụng
+- Xác định tên của trình duyệt đang truy cập vào website
+  Đối 1 số website thì cần xác định xem trình duyệt truy cập vào website để đưa ra những phần CSS hoặc các loại sử lý phù hợp đối với mỗi
+    loại trình duyệt
+  userAgent: Lấy được những thông tin userAgent mà phần Browser nó gửi đến Server
+- Xác định ngôn ngữ được thiết lập bởi trình duyệt đó
+  Website được xây dựng trên nhiều ngôn ngữ, ví dụ như tiếng anh, tiếng việt...
+  Khi truy cập vào 1 website nào đó thì website đó sẽ phải xác định xem trình duyệt đó đang được thiết lập bởi ngôn ngữ nào mà nó sẽ đưa ra
+    phần ngôn ngữ cho phù hợp
+  Trong phần mã nguồn để sử lý phần đa ngôn ngữ thì thường sử dụng giá trị đầu tiên
+    vi-VN  -> vi
+    en-US -> en
+  slice(s, e): Để trích xuất chuỗi từ vị trí thứ s đến vị trí e nhưng không lấy e
+  Lưu ý: 
+    Không nên sử dụng navigator để xác định các phiên bản của trình duyệt vì trên trình duyệt người dùng có thể thay đổi được các phần
+      trình duyệt -> Không được an toàn
+    Trình duyệt không xác nhận được phiên bản hệ điều hành được phát triển trước nó
+    Một số trình duyệt nó có thể tự ngộ nhận để có thể vượt qua 1 số trang web
+- Kiểm tra trình duyệt đã cài đặt plugin nào đó hay chưa?
+  VD: Shockware Flash
