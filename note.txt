@@ -324,3 +324,10 @@ Các hộp thoại:
     di chuyển 1 đoạn document.body.scrollHeight
     100ms cho di chuyển 20px
   Đang ở phía dưới, khi nhấn vào Go to top thì phần Scroll sẽ di chuyển lên phía trên
+- Window relationship: Mối quan hệ giữa các cửa sổ
+  opener: Thuộc tính này giúp ta trả về cửa sổ đã mở ra cửa sổ hiện tại
+  parent: Thuộc tính này giúp ta trả về cửa sổ cha của cửa sổ hiện tại
+  self: Thuộc tính này trả về cửa sổ mà ta đang thao tác hiện tại
+    Nó giúp ta thao tác với phần cửa sổ hiển tại
+    window.close() = window.self.close()
+  top: Trả về cửa sổ trên cùng của trình duyệt
