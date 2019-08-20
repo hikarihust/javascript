@@ -385,3 +385,17 @@ Các thuộc tính:
   height: Trả về chiều cao của màn hình(bao gồm phần taskbar)
   width: Trả về chiều rộng của màn hình(bao gồm phần taskbar)
 Ứng dụng: Mở 1 cửa sổ và cho cửa sổ đó nằm chính giữa màn hình(Desktop)
+
+================================================ JS History =================================================
+Đối tượng này giúp cho ta thao tác với phần history của trình duyệt web
+Thuộc tính:
+  length: Trả về số lượng URL được lưu trong danh sách history của trình duyệt
+    Đối với trình duyệt IE và Opera thì nó được bắt đầu từ giá trị 0
+    Đối với trình duyệt Chrome, Firefox và Safari thì nó sẽ bắt đầu bằng giá trị 1
+Phương thức:
+  back(): Tải lại URL trước đó có trong danh sách history của trình duyệt
+    Tương đương với history.go(-1)
+  forward(): Tải lại URL sau đó có trong danh sách history của trình duyệt
+    Tương đương với history.go(1)
+  go(): Tải lại 1 trang nào đó có trong danh sách history của trình duyệt
+Ứng dụng: 
