@@ -372,3 +372,16 @@ Thực hành: Các phương thức và thuộc tính của Navigator cũng ít k
     Một số trình duyệt nó có thể tự ngộ nhận để có thể vượt qua 1 số trang web
 - Kiểm tra trình duyệt đã cài đặt plugin nào đó hay chưa?
   VD: Shockware Flash
+
+================================================ JS Screen =================================================
+Cung cấp các thông tin về màn hình của người dùng khi họ truy cập website
+Các thuộc tính của Screen đều được hỗ trợ bởi các trình duyệt phổ biến hiện nay
+Đối tượng này có 1 số các thuộc tính và không có phương thức
+Các thuộc tính:
+  availHeight: Trả về chiều cao của màn hình(không bao gồm phần taskbar)
+  availWidth: Trả về chiều rộng của màn hình(không bao gồm phần taskbar)
+  colorDepth: Trả về số bits được sử dụng để chỉ ra màu sắc của 1 pixel trong 1 hình ảnh
+  pixelDepth: Trả về độ phân giải màu(số bit trên 1 điểm ảnh) của màn hình
+  height: Trả về chiều cao của màn hình(bao gồm phần taskbar)
+  width: Trả về chiều rộng của màn hình(bao gồm phần taskbar)
+Ứng dụng: Mở 1 cửa sổ và cho cửa sổ đó nằm chính giữa màn hình(Desktop)
