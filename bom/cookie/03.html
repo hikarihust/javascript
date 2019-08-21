@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript">
+        var cName = getCookie('name');
+        if (cName) {
+            alert('Xin chao ' + cName);
+        } else {
+            promptBox();
+        }
+
+        function promptBox() {
+            var name = prompt('Xin vui lòng nhập vào tên của bạn!');
+            if (name === null) {
+                return;
+            } 
+            createCookie('name', name);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        var enter = '<br />';
+        // Lưu cookie
+        function setCookie() {
+            var fullName = document.getElementById('fullname').value;
+            if (fullName) {
+                var now = new Date();
+                now.setMonth(now.getMonth() + 1);
+                document.cookie = 'fullName=' + escape(fullName) +
+                                   '; expires=' + now.toUTCString();
+                // document.cookie = 'firstName=' + escape(fullName);
+                alert('Cookie da duoc luu thanh cong');
+            } else {
+                alert('Dữ liệu không được rỗng');
+            }
+        }
+
+        // Lấy giá trị của cookie
+        function getCookie() {
+            if (document.cookie.length > 0) {
+                var cookies = document.cookie;
+                console.log(cookies);
+                arrCookie = cookies.split(";");
+                for (let i = 0; i < arrCookie.length; i++) {
+                    var temp = arrCookie[i].split('=');
+                    var name = temp[0];
+                    var value = unescape(temp[1]);
+                    console.log("Name: " + name + " - value: " + value);
+                }
+            } else {
+                alert('Cookie chưa được thiết lập');
+            }
+        }
+
+        // Xóa cookie
+        function delCookie(name) {
+            var time = new Date();
+                time.setMonth(time.getMonth() - 1);
+            document.cookie = name + "=; expires=" + time;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="fullname" id="fullname">
+    <input type="button" value="Set cookie" onclick="setCookie();">
+    <input type="button" value="Get cookie" onclick="getCookie();">
+    <input type="button" value="Delete cookie" onclick="delCookie('fullName');">
+</body>
+</html>

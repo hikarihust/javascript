@@ -462,3 +462,38 @@ Các phương thức:
 Thực hành:
   Lấy giá trị protocol nhưng bỏ đi dấu : bằng cách bỏ đi ký tự cuối cùng hoặc là replace dấu : bằng ký tự rỗng
   ...
+
+================================================ JS Cookies =================================================
+Là 1 dạng bản ghi được tạo ra và lưu lại trên trình duyệt của người dùng khi người dùng truy cập vào 1 website nào đó
+Đối với người dùng , cookie làm cho website trở lên tiện lợi hơn, họ có thể truy cập vào website nhanh hơn mà không phải
+  nhập lại những thông tin nhiều lần
+Một số trường hợp mà chúng ta có thể sử dụng cookie
+  Đối với các trang web thương mại điện tử, sử dụng cookie để ghi nhớ các thông tin khách hàng để họ không cần nhập lại 
+    thông tin nhiều lần khi tiến hành đặt hàng
+  Lưu thông tin ngày gần đây nhất mà người dùng truy cập vào website
+  Thống kê số người truy cập trên website
+Các thành phần của cookie
+  Expries: Xác định thời điểm cookie sẽ bị hết hiệu lực trên trình duyệt
+  Domain: Xác định tên miền sẽ được sử dụng để gửi cookie đi
+  Path: Đường dẫn hoặc thư mục trên trang web đã thiết lập cookie
+  Secure: Nếu giá trị này được thiết lập bên trong cookie, thông tin sẽ được mã hóa trong quá trình truyền giữa server và 
+    Browser
+  Name: Tên để phân biệt giữa các cookie khác nhau
+  Vd:
+    escape(): Để mã hóa 1 chuỗi nào đó
+    Khi đọc cookie thì các biến cookie được cách nhau bởi dấu ; do đó để đọc được ra thành từng biến thì phải tiến hành tách
+      chuỗi thu được thành 1 mảng
+    Để xóa 1 cookie thì cần cho biết tên của cookie muốn xóa, xóa bằng cách set lại giá trị cho cookie đó với giá trị expires
+      là time trong quá khứ
+
+Xây dựng 1 số hàm set, get và delete cookie
+  Tạo cookie: Khi tạo 1 coookie thì cần biết name, value và thời gian tồn tại của cookie
+  Xóa cookie: Cần biết cookie đó tên gì
+  Khi muốn lấy giá trị của 1 cookie thì cần biết tên của cookie đó
+
+Thực hành: 
+  1. Sử dụng JS Cookie để lưu tên của một khách viếng thăm. Sau này, mỗi khi vị khách đó truy cập vào trang web sẽ nhận được
+    một lời chào
+  2. Thống kê số lần truy cập vào trang web của người dùng
+  3. Lưu trữ các thông tin ở các ô input đã được nhập bởi người dùng
+    Việc này sẽ giúp cho người dùng đỡ mất nhiều thời gian để nhập vào những giá trị mà họ đã nhập

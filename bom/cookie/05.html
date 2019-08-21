@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px
+        }
+        .content {
+            margin: 20px auto;
+            width: 500px;
+            border: 1px solid #999
+        }
+        form div.row {
+            margin: 10px
+        }
+        form div.row span {
+            display: inline-block;
+            width: 200px;
+            text-align: right
+        }
+        form div.row input[type=text] {
+            padding: 3px 5px;
+            width: 150px
+        }
+        form div.row input[type=button] {
+            padding: 3px 5px;
+            display: block;
+            margin: 0px auto
+        }
+    </style>
+    <script type="text/javascript" src="js/cookie.js"></script>
+</head>
+<body>
+    <div class="content">
+        <form action="#" method="post">
+            <div class="row">
+                <span>First Name</span>
+                <input type="text" name="firstname" id="firstname">
+            </div>
+            <div class="row">
+                <span>Last Name</span>
+                <input type="text" name="lastname" id="lastname">
+            </div>
+            <div class="row">
+                <span>Email</span>
+                <input type="text" name="email" id="email">
+            </div>        
+            <div class="row">
+                <input type="button" value="Submit form" onclick="submitForm();">
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        displayVal('firstname');
+        displayVal('lastname');
+        displayVal('email');
+        
+        function submitForm() {
+            var firstName = document.getElementById('firstname').value;
+            var lastname = document.getElementById('lastname').value;
+            var email = document.getElementById('email').value;
+
+            setCookie('firstname', firstName);
+            setCookie('lastname', lastname);
+            setCookie('email', email);
+        }
+
+        function setCookie(name, value) {
+            if (value) {
+                createCookie(name, value);
+            }
+        }
+
+        function displayVal(nameEle) {
+            var eleValue = getCookie(nameEle);
+            if (eleValue) {
+                document.getElementById(nameEle).value = eleValue;
+            }
+        }
+    </script>
+</body>
+</html>
