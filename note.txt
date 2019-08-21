@@ -399,3 +399,25 @@ Phương thức:
     Tương đương với history.go(1)
   go(): Tải lại 1 trang nào đó có trong danh sách history của trình duyệt
 Ứng dụng: 
+    1. Vào trang index
+    2. Vào Article2(#article2)
+    3. Back  
+      Như vậy thì khi đang ở trang Article2 để quay trở lại trang index thì có thể dùng history.back
+    3. Article3
+    4. Article2 
+    5. Back => Article3
+    6. Next => Article2
+    --------------------------------------
+    1. index
+    2. Article2
+    3. Next=>null
+    4. Back=>index
+    5. Next=>Article2
+    6. go(-1)=>index
+    7. go(1)=>Article2
+    --------------------------------------
+    1. index
+    2. Article1
+    2. Article2
+    3. Article3
+    4. go(-2)=>Article1

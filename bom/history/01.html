@@ -6,7 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script type="text/javascript">
+        function back() {
+            history.back();
+        }
 
+        function next() {
+            history.forward();
+        }
+
+        function go() {
+            var value = document.getElementById('link-go').value;
+            if (value) {
+                history.go(value);
+            } else {
+                alert("Dữ liệu không được rỗng");
+            }
+        }
     </script>
     <style type="text/css">
         *{
@@ -100,11 +115,11 @@
             <li><a href="#article1">Article 1</a></li>
             <li><a href="#article2">Article 2</a></li>
             <li><a href="#article3">Article 3</a></li>
-            <li><a href="#">Back</a></li>
-            <li><a href="#">Next</a></li>
+            <li><a href="javascript:back()">Back</a></li>
+            <li><a href="javascript:next()">Next</a></li>
             <li>
                 <input type="text" name="link-go" id="link-go">
-                <a href="#">Go</a>
+                <a href="javascript:go()">Go</a>
             </li>
         </ul>
     </div>
