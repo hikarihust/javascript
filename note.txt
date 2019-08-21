@@ -421,3 +421,44 @@ Phương thức:
     2. Article2
     3. Article3
     4. go(-2)=>Article1
+================================================ JS Location =================================================
+Đối tượng này gồm các thông tin về URL của cửa sổ hiện tại và nó có thể chuyển hướng của cửa sổ đến URL khác
+Các thuộc tính:
+  hash: Thiết lập hoặc trả về giá trị hash(bắt đầu bởi dấu #) của 1 URL
+  host: Thiết lập hoặc trả về giá trị host và port của 1 URL
+  hostname: Thiết lập hoặc trả về giá trị hostname 1 URL
+  href: Thiết lập hoặc trả về giá trị href của 1 URL
+  pathname: Thiết lập hoặc trả về giá trị pathname của 1 URL
+    Là giá trị sau phần host
+  port: Thiết lập hoặc trả về giá trị pathname của 1 URL
+  protocol: Thiết lập hoặc trả về giá trị protocol(có bao gồm cả dấu :) của 1 URL
+  search: Thiết lập hoặc trả về giá trị search(bắt đầu bởi dấu hỏi) của 1 URL
+  Ví dụ: Có URL có dạng là
+    http://www.webtest.vn:8080/public/the-thao/bong-da-vn.html#title
+  Các thành phần của URL:
+    Href(chính bằng toàn bộ URL): http://www.webtest.vn:8080/public/the-thao/bong-da-vn.html#title 
+    Protocol: http
+    Host: www.webtest.vn:8080
+    Hostname: www.webtest.vn
+    Port: 8080
+    Pathname: public/the-thao/bong-da-vn.html
+    Hash: #title 
+  URL: http://proj_news.xyz/bom/location/01.html?student=nguyenvana#article
+    Href: http://proj_news.xyz/bom/location/01.html?student=nguyenvana#article
+    Protocol: http:
+    Host: proj_news.xyz
+    Port: Có giá trị là rỗng khi port đang được set giá trị mặc định là 80
+    Hostname: proj_news.xyz
+    Pathname: /bom/location/01.html
+    Hash: #article
+    Search: ?student=nguyenvana
+Các phương thức:
+  assign(): Tải một URL mới
+  reaload(foreGet): Tải lại trang hiện tại. Tham số foreGet nhận 2 giá trị
+    True: Tải lại trang từ server
+    False: Tải lại trang từ cache(mặc định)
+  replace(): Thay thế URL hiện tại bởi một URL mới
+  Khác biệt giữa hàm replace() và assign() là assign thì có thể back được lại trang trước đó còn replace thì không
+Thực hành:
+  Lấy giá trị protocol nhưng bỏ đi dấu : bằng cách bỏ đi ký tự cuối cùng hoặc là replace dấu : bằng ký tự rỗng
+  ...
