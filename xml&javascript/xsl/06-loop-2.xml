@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="06-loop-2.xsl"?>
+<book_shop>
+	<book>
+		<title>Lập trình jQuey</title>
+		<author>Quang</author>
+		<pages>500</pages>
+		<weight units="gam">600</weight>
+	</book>
+	<book>
+		<title>Lập trình PHP</title>
+		<author>Quang</author>
+		<pages>800</pages>
+		<weight units="gam">900</weight>
+	</book>
+	<book>
+		<title>Lập trình HTML</title>
+		<author>Quang</author>
+		<pages>1200</pages>
+		<weight units="gam">1500</weight>
+	</book>
+</book_shop>

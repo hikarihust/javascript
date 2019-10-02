@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Ghi chú:
+        & -> &amp;
+        < -> &lt;
+        > -> &gt;
+        " -> &quot;
+        ' -> &apos;
+-->
+<book>
+	<title>Lập trình &amp; &lt; &gt; &quot; &apos; jQuery</title>
+	<author>Quang</author>
+	<page>500</page>
+	<weight units="gam">400</weight>
+	<img file="jquery.png" />
+</book>

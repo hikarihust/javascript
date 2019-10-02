@@ -497,3 +497,92 @@ Thực hành:
   2. Thống kê số lần truy cập vào trang web của người dùng
   3. Lưu trữ các thông tin ở các ô input đã được nhập bởi người dùng
     Việc này sẽ giúp cho người dùng đỡ mất nhiều thời gian để nhập vào những giá trị mà họ đã nhập
+
+================================================ Javascript & XML =================================================
+
+XML Basic
+  1.XML
+    XML(eXtensible Markup Language): Ngôn ngữ đánh dấu mở rộng
+      Là ngôn ngữ gần giống như HTML
+      Các thẻ của XML là do người viết tạo ra theo các kỹ thuật XML
+      Các thẻ XML rất giống với HTML bao gồm
+        Thẻ(tag)
+        Dữ liệu(data)
+        Thuộc tính(attribute)
+      Trong 1 tập tin XML bất kỳ thì phải có tối thiểu là 1 nút được gọi là nút gốc
+    XML dùng để:
+      Lưu trữ thông tin nhỏ như 1 menu của website, thông tin của tác giả...
+      Kết hợp với javascrip để tạo ra kỹ thuật Ajax
+      Có tác dụng lưu trữ dữ liệu
+      Cấu trúc để truyền dữ liệu
+      -> Không phải là tập tin để hiển thị dữ liệu mà là tập tin để chứa và trao đổi dữ liệu
+    <?xml version="1.0" encoding="UTF-8"?> là dòng mặc định phải có khi tạo ra 1 tập tin XML
+    Có thể sử dụng PHP để tạo ra 1 tập XML
+    Rule:
+      Mỗi tập tin XML phải có 1 nút gốc
+        Khi mở 1 tập tin không có nút gốc:
+          This page contains the following errors:
+          error on line 14 at column 1: Extra content at the end of the document
+          Below is a rendering of the page up to the first error.
+      Mỗi khi mở thẻ thì phải có thẻ đóng 
+      Khi 1 thẻ không có dữ liệu thì có thể viết tắt: <img file="jquery.png" />
+      Tên của các phần tử trong tập tin XML có phân biệt chữ hoa chữ thường
+      Ghi chú: <!-- Ghi chú -->
+      Các giá trị thuộc tính thì nên để trong ngoặc kép ""
+      Trong nội dung của thẻ hay thuộc tính thì không được chứa các giá trị đặc biệt: & < > " '
+        Khi đưa các giá trị đặc biệt trên vào thì phải sử dụng các giá trị khác:
+          & -> &amp;
+          < -> &lt;
+          > -> &lt;
+          " -> &quot;
+          ' -> &apos;
+      <![CDATA[]]>: Nếu muốn lưu trữ 1 đoạn mã nào đó mà trong đó có nhiều ký tự đặc biệt, mà không cần phải thay đổi nó thành các ký
+        hiệu html
+
+  2.XSL(eXtensible Stylesheet Language): Là ngôn ngữ để định dạng cho tập tin XML
+    Định dạng lại tập tin XML giúp khi xem 1 tập tin XML trên trình duyệt dễ nhìn hơn
+    xsl:stylesheet: Thẻ này để trình duyệt hiểu rằng đây là tập tin định dạng kiểu
+    xsl:template: Thẻ này cho phép đưa mã html vào
+    xsl sẽ giải quyết vấn đề hiển thị nội dung xml ra phía ngoài
+    <xsl:template match="/">: Khi match được truyền giá trị là '/' thì có nghĩa là chọn toàn bộ tập tin
+      match cho ta biết nó sẽ đi vào đâu của tập xml, có thể chỉ thị cho nó bắt đầu từ 1 node nào đó của tập tin xml
+    <xsl:value-of select="book/weight/@units" />: Dùng @ để lấy giá trị thuộc tính của thẻ
+    <xsl:if test="weight/@units != 'gam'">: Điều kiện cả thuộc tính
+    <xsl:choose>, <xsl:when>, and <xsl:otherwise> Là câu điều kiện nó giống với câu điều kiện if-else hay switch-case trong javascrip
+    <xsl:for-each select="book[pages = 500]">: Dùng vòng lặp kết hợp với điều kiện
+
+    -> Hiển thị cũng không khác gì html nhưng dữ liệu của nó lấy ra là từ trong tập tin XML, XML thường dùng để lưu trữ thông tin nhỏ,
+      còn khi có lượng thông tin lớn hơn thì lưu vào trong DB 
+
+  3.XPath: Là cú pháp dùng để định nghĩa các phần của XML, dùng các biểu thức để truy xuất đến các thành phần trong XML như thuộc tính
+    hay phần tử
+    Chứa đựng 1 thư viện những phương thức để chúng ta có thể thực hiện các thao tác trên XML
+    Là 1 phần tử lớn trong ngôn ngữ XSL
+    xsl:template... là các lệnh của tập tin XSL, những giá trị nằm ở trong match hoặc select là XPath. 
+      / Là lấy nút gốc
+      Muốn lấy nội dung của 1 nút nào đó thì cần phải biết tên của nút đó
+      // Có thể truy xuất đến 1 node nằm trong tập tin XML ở vị trí bất kỳ mà không cầfn phải đi đúng đường dẫn
+      . Lấy toàn bộ thông tin của nút hiện thời
+      .. Lấy ra toàn bộ các giá trị nằm trong phần tử cha
+      @ Truy cập đến thuộc tính nào đó
+    Truy xuất các phần tử theo các vị trí nào đó ở trên XML
+      path/book[2]: Lấy ra thông tin của node ở vị trí số 2 
+      path/book[last()]: Lấy ra thông tin của node ở vị trí cuối cùng 
+      path/book[last()-1]: Lấy ra thông tin của node ở vị trí kế cuối 
+      path/book[@id]: Lấy ra thông tin của các node có tồn tại thuộc tính id 
+      path/book[@id=n]: Lấy ra thông tin của các node có tồn tại thuộc tính id có giá trị bằng n
+      //book/title | //book/author: Lấy ra giá trị của title và author
+    Các hàm thông dụng của XPath
+      Biểu thức so sánh:
+        Lớn hơn: &gt;
+        Nhỏ hơn: &lt;
+        Bằng: =
+        Khác: !=
+      Các phép toán:
+        + - * div
+      Hàm làm tròn:
+        format-number: format-number(100 - (price/saleoff div price/real)*100, '##0.##')
+        round: round(100 - (price/saleoff div price/real)*100)
+        count: count(book_shop/book)
+        sum: sum(book_shop/book/price/saleoff)
+    -> XSL hỗ trợ các phương thức để có thể truy xuất đến các phần mình muốn, XPath giúp xác định rõ các giá trị muốn lấy

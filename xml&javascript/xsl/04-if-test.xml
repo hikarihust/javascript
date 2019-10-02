@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="04-if-test.xsl"?>
+<book>
+	<title>Lập trình jQuey</title>
+	<author>Quang</author>
+	<pages>500</pages>
+	<weight units="kg">400</weight>
+</book>

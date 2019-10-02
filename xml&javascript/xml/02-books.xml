@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<book_shop>
+	<book>
+		<title>Lập trình jQuery</title>
+		<author>Quang</author>
+		<page>500</page>
+		<weight units="gam">400</weight>
+	</book>
+	<book>
+		<title>Lập trình PHP</title>
+		<author>Quang</author>
+		<page>700</page>
+		<weight units="gam">800</weight>
+	</book>
+	<book>
+		<title>Lập trình HTML</title>
+		<author>Quang</author>
+		<page>900</page>
+		<weight units="kilo">1</weight>
+	</book>
+</book_shop>
