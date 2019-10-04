@@ -586,3 +586,7 @@ XML Basic
         count: count(book_shop/book)
         sum: sum(book_shop/book/price/saleoff)
     -> XSL hỗ trợ các phương thức để có thể truy xuất đến các phần mình muốn, XPath giúp xác định rõ các giá trị muốn lấy
+
+XML JavaScript: Kết hợp giữa JavaScript và XML, sự kết hợp giữa JavaScript và XML được gọi là XML DOM
+  Ajax load
+    
