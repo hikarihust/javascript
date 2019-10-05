@@ -607,3 +607,70 @@ XML JavaScript: Kết hợp giữa JavaScript và XML, sự kết hợp giữa J
       tập tin mình muốn(tập tin này nằm trên server). Sau khi send() thì readyState có giá trị bằng 4 -> đã nhận được dữ liệu về
     status:200 -> đường dẫn có tồn tại
     readyState: 4 Lúc này thì đã lấy được nội dung tập tin từ server -> có thể sử dụng nó để thực hiện những gì mình muốn
+
+  XMLHttpRequest:
+    Là 1 đối tượng của JavaScript được sử dụng rất nhiều trong các ứng dugnj web, nó được áp dụng ở trong kỹ thuật Ajax
+    Thuộc tính:
+      readyState: Khi truy xuất vào thuộc tính này, nó sẽ trả về cho mình số nguyên có giá trị từ 0 -> 4
+        0: request not initialized. Nó thông báo cho ta trạng thái của đối tượng XMLHttpRequest chưa thực thi phương thức open()
+        1: server connection established. Phương thức open() đã được thực thi nhưng phương thức send() chưa được thực thi
+        2: request received
+        3: processing request
+        4: request finished and response is ready. Đã gửi yêu cầu lên server và nhận về đầy đủ thông tin của server tiếp đó là kết thúc quá trình
+          nhận dữ liệu.
+          Trong trường hợp nhận được giá trị trả về nhưng nó là Not Found thì cũng có giá trị là 4. Xảy ra khi truy cập vào 1 địa chỉ nào đó mà nó
+            không tồn tại
+        2: Yêu cầu đã được gửi tới máy chủ nhưng chưa nhận được giá trị trả về, điều này có thể xả ra khi vị trí của server ở quá xa
+        3: Đã nhận được dữ liệu trả về nhưng chưa phải là toàn bộ dữ liệu đó
+        -> 5 giá trị này trên thực tế rất quan trọng khi chúng ta xử lý Ajax
+      status:
+        200: Quá trình gửi thông tin đến máy chủ và quá trình máy chủ gửi lại thông tin về trình duyệt đã thành công
+        404: Tập tin không tồn tại trên server nên nó không nhận được dữ liệu mong muốn
+        Mở rộng:
+          情報レスポンス (100–199),
+          成功レスポンス (200–299),
+          リダイレクト (300–399),
+          クライアントエラー (400–499),
+          サーバエラー (500–599)
+      statusText: Có giá trị là Ok và Not Found
+      responseText
+      responseXML
+
+    Phương thức:
+      abort(): Giúp hủy bỏ yêu cầu gửi đến server. Có nghĩa là sau khi đã thiết lập giá trị cho phương thức open(), tiếp đó gửi thông tin đến
+        server bằng phương thức send() để chuẩn bị nhận dữ liệu về thì trong quá trình gửi và đang nhận dữ liệu nếu muốn hủy đi cái giao thức
+        nhận dữ liệu thì có thể sử dụng phương thức abort()
+        -> Hủy bỏ yêu cầu hiện thời
+      getAllResponseHeaders() Giúp lấy về những thông tin header của tập tin mà mình sẽ Request đến
+        date: Sat, 05 Oct 2019 07:20:17 GMT                       -> Ngày Request
+        server: Apache/2.4.37 (Win32) OpenSSL/1.1.1 PHP/7.2.12    -> Server đang sử dụng là Window hay Linux
+        connection: Keep-Alive                                    -> Trạng thái đang kết nối
+        x-powered-by: PHP/7.2.12                                  -> Ngôn ngữ đang sử dụng là PHP
+        content-length: 423                                       -> Chiều dài của tập tin mà mình Request đến
+        keep-alive: timeout=5, max=99                             -> Thời gian timeout và thời gian kết nối tối đa 
+        content-type: text/html; charset=UTF-8                    -> Kiểu dữ liệu trả về
+      getResponseHeader(val): Lấy ra thông tin nào từ trong tập hợp các thông tin mà được trả về từ máy chủ
+        xhttp.getResponseHeader('content-type')
+          -> text/html; charset=UTF-8
+      open(method,url,async):
+        async:
+          False: Sử dụng ở trạng thái đồng bộ. xhttp.onreadystatechange không kiểm soát trạng thái thay đổi của readyState
+          true: Sử dụng ở trạng bất đồng bộ -> Sự kiện xhttp.onreadystatechange kiểm soát trạng thái thay đổi của readyState
+            Như vậy thì khi truyền true cho async thì mình có thể sử dụng được sự kiện onreadystatechange, vì nó sẽ kiểm tra liên tục thay đổi
+              để giúp mình có thể điều khiển được nó dễ hơn
+          -> Khi sử dụng giá trị true thì có thể kiểm xoát các trạng thái của quá trình xử lý Ajax. Khi sử dụng Ajax thì truyền giá trị true rồi 
+            sau đó kiểm tra 1 số thông tin
+        xhttp.readyState === 4 && xhttp.status === 200
+          4: Quá trình gửi và nhận dữ liệu đã xong(OK/Not Found),  
+          200: Đã nhận được dữ liệu mong muốn từ trên server về  
+    
+    xhttp.open("POST", "files/005.php", true): open() với phương thức là POST
+      Khi dùng với phương thức POST thì thường nó được dùng cho 1 phần đó là Ajax Form
+      Khi nhấn nút để lấy nội dung của 1 file nào đó trên server thì thực hiện gửi nội dung đã nhập trong Form lên server
+      Gửi qua phương thức send()
+      Để máy chủ có thể nhận được thông tin gửi lên qua phương thức send() thì phải sử dụng đến phương thức setRequestHeader()
+      server sử lý và trả về dữ liệu kiểu XML
+      var flag = xmlDom.getElementsByTagName("flag")[0].childNodes[0].nodeValue -> Truy cập các phần tử trong XML và lấy ra giá trị của nó
+    setRequestHeader(): Có thể được dùng để gửi giá trị lên server bằng cách truyền cặp giá trị label/value làm tham số
+      xhttp.setRequestHeader("Token", "9999");
+      Trên server có thể lấy được giá trị ra thông qua $_SERVER

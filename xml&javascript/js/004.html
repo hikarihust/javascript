@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ajax load</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script type="text/javascript">
+	window.onload = function() {
+		var btnProcess = document.getElementById("process");
+		btnProcess.onclick = function(e) {
+
+			if (window.XMLHttpRequest) {
+				var xhttp = new XMLHttpRequest();
+			} else { // ie5 -ie6
+				var xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			xhttp.open("GET", "files/004.php", true);
+			
+			// Gửi yêu cầu đến máy chủ
+			xhttp.send();
+			// console.log(xhttp.getAllResponseHeaders());
+			// console.log(xhttp.getResponseHeader('content-type'));
+
+			// console.log(xhttp.getAllResponseHeaders());
+			// console.log(xhttp.getResponseHeader("content-type"));
+
+			// var val = xhttp.responseText;
+
+			// var boxA = document.getElementById("boxA");
+			// boxA.innerHTML = val;
+
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState === 4 && xhttp.status === 200) {
+					var val = xhttp.responseText;
+
+					var boxA = document.getElementById("boxA");
+					boxA.innerHTML = val;
+				}
+				
+				if (xhttp.status < 200 || xhttp.status > 300) {
+					console.log('err');
+				}
+			}
+			
+			// =================================================================
+
+			// Thuộc tính
+			// xhttp.open("GET", "files/004.php", false);
+			// xhttp.send();
+			// console.log(xhttp.readyState);
+
+			// xhttp.open("GET", "files/004.php", false);
+			// xhttp.send();
+			// console.log(xhttp.readyState);
+			// console.log(xhttp.status);
+			// console.log(xhttp.statusText);
+		}
+	}
+</script>
+</head>
+
+<body>
+	<div id="boxA" class="boxA">
+
+	</div>
+	<div style="text-align: center; padding: 5px">
+		<input type="button" id="process" name="process" class="button" value="Process">   
+	</div>
+</body>
+</html>
