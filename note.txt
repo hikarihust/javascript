@@ -589,4 +589,21 @@ XML Basic
 
 XML JavaScript: Kết hợp giữa JavaScript và XML, sự kết hợp giữa JavaScript và XML được gọi là XML DOM
   Ajax load
-    
+    Kết hợp giữ XML và JavaScript, đây là nền tảng của Ajax, nó kết hợp giữ XML, JavaScript và html để tạo thêm 1 kỹ thuật được gọi là 
+      kỹ thuật Ajax
+    XMLHttpRequest: Là đối tượng rất quan trọng, đối tượng này giúp chúng ta tạo ra kỹ thuật Ajax
+    Thực hiện load lên nội dung của tập tin XML, txt, PHP hoặc html
+    Trong đối tượng XMLHttpRequest có rất nhiều thuộc tính và phương thức như responseText, responseType, responseXML. Đây là phần trả về, 
+      đây là phần mà kỹ thuật Ajax đang sử. Nó có thể:
+        Update a web page without reloading the page
+        Request data from a server after the page has loaded
+        Receive data from a server after the page has loaded
+        Send data to a server in the background
+    Ở 1 số trình duyệt thì nó không hỗ trợ đối tượng XMLHttpRequest, nhất là đối với IE -> trong trường hợp không hỗ trợ đối tượng XMLHttpRequest
+      thì lúc này lấy đối tượng XMLHttpRequest thông qua ActiveXObject("Microsoft.XMLHTTP");
+    http có 2 phương thức đó là GET và POST, khi mở tập tin thì sử dụng phương thức GET
+    Khi mới khởi tạo đối tượng XMLHttpRequest thì readyState có giá trị bằng 0, nghĩa là chưa chuẩn bị đọc tập tin mình muốn. Khi sử dụng phương
+      thức open() -> readyState có giá trị bằng 1, có nghĩa là nó chuẩn bị đọc tập tin mình muốn -> nhận được thông tin là lấy về nội dung của
+      tập tin mình muốn(tập tin này nằm trên server). Sau khi send() thì readyState có giá trị bằng 4 -> đã nhận được dữ liệu về
+    status:200 -> đường dẫn có tồn tại
+    readyState: 4 Lúc này thì đã lấy được nội dung tập tin từ server -> có thể sử dụng nó để thực hiện những gì mình muốn
