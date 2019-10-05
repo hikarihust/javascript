@@ -674,3 +674,13 @@ XML JavaScript: Kết hợp giữa JavaScript và XML, sự kết hợp giữa J
     setRequestHeader(): Có thể được dùng để gửi giá trị lên server bằng cách truyền cặp giá trị label/value làm tham số
       xhttp.setRequestHeader("Token", "9999");
       Trên server có thể lấy được giá trị ra thông qua $_SERVER
+
+  Convert XML: Đọc 1 tập tin XML và xuất nó ra ngoài trình duyệt
+    Từ  1 chuỗi có cấu trúc XML, từ chuỗi đó lấy ra thông tin cần thiết để in ra trình duyệt, từ chuỗi đó chuyển đổi thành 1 đối tượng XML
+        để có thể truy xuất dễ dàng
+      Đối tượng dùng để chuyển đổi thì trên các trình duyệt khác nhau, đối tượng dùng để chuyển đổi cũng khác nhau
+        Trên các trình duyệt như Chrome thì đối tượng dùng để chuyển đổi là window.DOMParser nhưng nó lại không tồn tại ở trên IE
+        Đối với trình duyệt IE cũ thì dùng ActiveXObject("Microsoft.XMLDOM")
+    Chuyển đổi 1 đối tượng XML thành 1 chuỗi, việc chuyển đổi này thực hiện khi truyền dữ liệu đi giữa các server
+      (new XMLSerializer()).serializeToString(xmlDOM); -> Chrome
+      IE: xmlDOM.xml;
