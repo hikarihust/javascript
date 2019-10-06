@@ -676,7 +676,7 @@ XML JavaScript: Kết hợp giữa JavaScript và XML, sự kết hợp giữa J
       Trên server có thể lấy được giá trị ra thông qua $_SERVER
 
   Convert XML: Đọc 1 tập tin XML và xuất nó ra ngoài trình duyệt
-    Từ  1 chuỗi có cấu trúc XML, từ chuỗi đó lấy ra thông tin cần thiết để in ra trình duyệt, từ chuỗi đó chuyển đổi thành 1 đối tượng XML
+    Từ 1 chuỗi có cấu trúc XML, từ chuỗi đó lấy ra thông tin cần thiết để in ra trình duyệt, từ chuỗi đó chuyển đổi thành 1 đối tượng XML
         để có thể truy xuất dễ dàng
       Đối tượng dùng để chuyển đổi thì trên các trình duyệt khác nhau, đối tượng dùng để chuyển đổi cũng khác nhau
         Trên các trình duyệt như Chrome thì đối tượng dùng để chuyển đổi là window.DOMParser nhưng nó lại không tồn tại ở trên IE
@@ -705,4 +705,16 @@ XML JavaScript: Kết hợp giữa JavaScript và XML, sự kết hợp giữa J
           selectSingleNode() Chỉ lấy node đầu tiên
 
 XML & PHP:
-  
+  Để có thể truyền được dữ liệu từ server này sang server khác thì có thể sử dụng XML hoặc là json
+  Lấy dữ liệu từ DB để tạo thành 1 tập tin XML
+  Có thể sử dụng PHP để đọc 1 tập tin XML và lấy ra những giá trị trong tập tin XML đó
+  header("Content-type:text/xml"): Biến tập tin PHP thành tập tin XML
+  SimpleXML:
+    Tạo ra 1 đối tượng SimpleXML từ string -> simplexml_load_string()
+    Đọc 1 tập tin XML bằng SimpleXML simplexml_load_file() -> cũng thu được 1 đối tượng SimpleXML
+    Có thể tạo ra 1 chuỗi từ 1 đối tượng SimpleXML -> asXML(), 1 đối tượng thì chúng ta không thể truyền đi giữa các server khác nhau vì vậy 
+      thì khi muốn truyền thì phải chuyển đối tượng thành 1 chuỗi
+    Truy xuất vào các phần tử của 1 tập tin XML bằng đối tượng SimpleXML, việc lấy ra được giá trị của 1 node trong PHP bằng cách sử dụng SimpleXML
+      là rất đơn giản
+    Sử dụng phương thức attributes() để truy cập vào thuộc tính của các node
+    getName(): Lấy ra được tên thẻ mình đang truy cập

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="xsl/01-node.xsl"?>
 <book_shop>
-	<book id="11">
+	<book id="11" type="small">
 	  <title>Lập trình jQuery</title>
 	  <author>Quang</author>
 	  <pages>500</pages>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2019 at 06:47 PM
+-- Generation Time: Oct 06, 2019 at 07:26 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -48,8 +48,8 @@ CREATE TABLE `books` (
 
 INSERT INTO `books` (`id`, `title`, `author`, `pages`, `weight`, `units`, `real`, `saleoff`, `US`, `EU`, `VN`) VALUES
 (11, 'Lập trình jQuery', 'Quang', 500, 400, 'gam', 35.5, 35.5, 1.3, 2.3, 5.6),
-(22, 'Lập trình Joomla', 'Quang', 700, 900, '', 43.52, 33, 1.3, 2.3, 5.6),
-(33, 'Lập trình Zend Framework', 'Quang', 1200, 1200, '', 67.22, 53, 1.3, 2.3, 5.6);
+(22, 'Lập trình Joomla', 'Quang', 700, 900, 'gam', 43.52, 33, 1.3, 2.3, 5.6),
+(33, 'Lập trình Zend Framework', 'Quang', 1200, 1200, 'gam', 67.22, 53, 1.3, 2.3, 5.6);
 
 --
 -- Indexes for dumped tables
