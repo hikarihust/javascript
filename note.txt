@@ -703,3 +703,6 @@ XML JavaScript: Kết hợp giữa JavaScript và XML, sự kết hợp giữa J
         IE9 - not work for IE10: Truy cập các phần tử XML bằng XPath trên trình duyệt IE
           selectNodes() Lấy được tập hợp các đối tượng
           selectSingleNode() Chỉ lấy node đầu tiên
+
+XML & PHP:
+  
