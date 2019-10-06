@@ -684,3 +684,22 @@ XML JavaScript: Kết hợp giữa JavaScript và XML, sự kết hợp giữa J
     Chuyển đổi 1 đối tượng XML thành 1 chuỗi, việc chuyển đổi này thực hiện khi truyền dữ liệu đi giữa các server
       (new XMLSerializer()).serializeToString(xmlDOM); -> Chrome
       IE: xmlDOM.xml;
+
+  Read nodes: Truy xuất các giá trị ở trong tập tin XML bằng JavaScript
+    Có 2 cách để thực hiện đó là sử dụng các kiến thức liên quan đến node, đối với XML thì nó cũng là 1 cây, ở trong đó có nhiều node vì thế 
+      có thể truy xuất bằng cách
+      Cách 1: Sử dụng các phương thức của node: CharacterData, Document, Element
+        -> Để truy xuất vào 1 node thì quá phức tạp, nó phải qua nhiều công đoạn để thực hiện
+        getAttribute(): Dùng để lấy giá trị của thuộc tính của node
+        Việc sử dụng các con số để truy xuất đến các node thì có phần hạn chế đó là nếu như cấu trúc của tập tin XML thay đổi thì các chỉ số
+          không còn đúng nữa -> để tránh việc truy xuất qua các chỉ số thì có thể truy xuất thông qua tên của các thẻ trong tập tin XML
+          -> getElementsByTagName()
+        Khi truy vấn vào các phần tử XML khá dài dòng, dễ nhầm -> tạo ra các hàm để khi sử dụng nhanh gọn hơn
+      Cách 2: Sử dụng xPath
+        xmlDOM.evaluate: Phương thức này chỉ tồn tại trên các trình duyệt như Chrome - W3C, không tồn tại trên IE
+          -> Bước này tạo ra đối tượng XPathResult
+        Muốn lấy được ra thông tin của node thì cần thực hiện tiếp 1 node nữa đó là iterateNext()
+        Cách truy xuất bằng xPath như thế này rất đơn giản, đơn giản hơn nhiều so với cách thực hiện bằng getElementsByTagName()
+        IE9 - not work for IE10: Truy cập các phần tử XML bằng XPath trên trình duyệt IE
+          selectNodes() Lấy được tập hợp các đối tượng
+          selectSingleNode() Chỉ lấy node đầu tiên
