@@ -720,4 +720,62 @@ XML & PHP:
     getName(): Lấy ra được tên thẻ mình đang truy cập
 
 JSON - JS - PHP
-  
+  Có tác dụng giống như XML đó là để trao đổi dữ liệu nhưng đối với JSON thì cách truy vấn vào các giá trị cũng như các thuộc tính của JSON
+    rất đơn giản
+  Json có thể lưu trữ được các thông tin dạng chuỗi, số, đối tượng, mảng..
+  Tương tự như trong các node XML thì nó có node và thuộc tính, vì vậy khi lưu dữ liệu có dạng cấu trúc XML thì lưu mỗi nốt là 1 đối tượng nó
+    lưu 2 phần là data và attributes. Trong đó attributes chứa các thuộc tính của node, data chứa các node con trong trường hợp nó chứa node con
+    còn không thì lưu giá trị của node đó.
+  XML có nhiều node chính -> lúc này để JSON có thể lưu được dữ liệu có cấu trúc XML như vậy thì đối tượng JSON có
+    có 1 thuộc tính đầu tiên là 1 mảng, mảng đó chứa cấu trúc của XML, mỗi phần tử của mảng là 1 đối tượng chứa cấu trúc của 1 node
+    books = {
+        data: [
+          {
+            data: { 
+              title : "Lập trình jQuery",
+              author: "Quang",
+              pages : 500,
+            },
+            attributes: { 
+              id: 11,
+              type: "small"
+            }
+          },
+          {
+            data: { 
+              title : "Lập trình Joomla",
+              author: "Quang",
+              pages : 700,
+            },
+            attributes: { 
+              id: 22,
+              type: "small"
+            }
+          },
+          {
+            data: { 
+              title : "Lập trình Zend Framework",
+              author: "Quang",
+              pages : 1200,
+            },
+            attributes: { 
+              id: 33,
+              type: "small"
+            }
+          }
+        ]
+      };
+    
+    Để truy cập vào dữ liệu đối tượng dạng trên thì dùng đến vòng lặp for:
+			for (let i = 0; i < books.data.length; i++) {
+				var book = books.data[i];
+				console.log(book.data.title);
+				console.log(book.attributes.id);
+			}
+  Có thể truyền 1 đối tượng json đến server khác, và trên server đó sẽ lấy giá trị json để sử lý
+    -> Có 2 cách chuyển đó là GET và POST. Việc truyền theo phương thức nào thì nó tùy thuộc vào ứng dụng của mình
+  PHP có thể chuyển đối 1 chuỗi json thành 1 đối tượng bằng json_decode() và ngược lại chuyển 1 đối tượng Json thành chuỗi bằng JS -> stringify()
+    PHP -> json_encode()
+  Chuyển chuỗi json cho javascrip để sử dụng trong javascrip
+    var myObj = eval('<?php echo $strBooks ?>');
+    var myObj = <?php echo json_encode($strBooks) ?>;

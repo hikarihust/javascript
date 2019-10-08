@@ -4,7 +4,7 @@
 	
 	<book id="11" type="small">
 	  <title>Lập trình jQuery</title>
-	  <author>KhanhPham và ZendVN group</author>
+	  <author>Quang</author>
 	  <pages>500</pages>
 	  <weight units="gam">400</weight>
 	  <price>
@@ -21,7 +21,7 @@
 	
 	<book id="22">
 	  <title>Lập trình Joomla</title>
-	  <author>KhanhPham và ZendVN group</author>
+	  <author>Quang</author>
 	  <pages>700</pages>
 	  <weight units="gam">900</weight>
 	  <price>
@@ -37,7 +37,7 @@
 	
 	<book id="33">
 	  <title>Lập trình Zend Framework</title>
-	  <author>KhanhPham và ZendVN group</author>
+	  <author>Quang</author>
 	  <pages>1200</pages>
 	  <weight units="gam">1200</weight>
 	  <price>
