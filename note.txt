@@ -718,3 +718,6 @@ XML & PHP:
       là rất đơn giản
     Sử dụng phương thức attributes() để truy cập vào thuộc tính của các node
     getName(): Lấy ra được tên thẻ mình đang truy cập
+
+JSON - JS - PHP
+  
