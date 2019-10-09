@@ -779,3 +779,21 @@ JSON - JS - PHP
   Chuyển chuỗi json cho javascrip để sử dụng trong javascrip
     var myObj = eval('<?php echo $strBooks ?>');
     var myObj = <?php echo json_encode($strBooks) ?>;
+
+================================================ DOM =================================================
+DOM: Document Object Model -> kiểu đối tượng tài liệu 
+  DOM giúp định nghĩa các chuẩn cho việc thao tác hoặc truy cập đến các phần tử trên tài liệu HTML và XML
+  Là nền tảng ngôn ngữ giao diện
+  Dựa vào DOM có thể lập trình và viết mã để truy cập hoặc thay đổi nội dung cấu trúc của tài liệu HTML hoặc XML
+  Để làm việc với DOM thì cần hiểu đến khái niệm node(nhánh của cây) và node list. Mỗi cây có 1 node gốc
+    -> Đối với DOM thì các tài liệu html và xml được xem ở dạng cây
+  Nội dung(text) hay thuộc tính(attributes) của thẻ cũng được gọi là node
+  Trong 1 document HTML thì được chia ra làm các loại node
+    Document node: Đó chính là tập tin html
+    Element node: Element, text, comment
+      Element: html, head, body, h1, a, title
+      Text: Nội dung text nằm trong thẻ 
+    Attribute node: các thuộc tính như href...
+    Text node: Ở trong text node thì sẽ không còn có node nào khác
+  Truy cập node(phần tử html):
+    Truy cập qua id, tagname, class 
