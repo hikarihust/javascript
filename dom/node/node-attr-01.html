@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/01.css" />
+<script type="text/javascript" src="js/function.js"></script>
+<title>Untitled Document</title>
+<script type="text/javascript">
+    window.onload = function() {
+        var boxA = document.getElementById("boxA");
+        console.log(boxA);
+
+        var nodeAttr = boxA.attributes;             // Thu được đối tượng NameNodeMap 
+
+        // Các phương thức và thuộc tính của NameNodeMap
+        console.log(nodeAttr.length);
+        console.log(nodeAttr.getNamedItem("class"));            // Thu được 1 node
+        console.log(nodeAttr.getNamedItem("class").name);   // = nodeAttr.getNamedItem("class").nodeName - string
+        console.log(nodeAttr.getNamedItem("class").value);  // = nodeAttr.getNamedItem("class").nodeValue
+        console.log(nodeAttr.getNamedItem("class").textContent);  // = nodeAttr.getNamedItem("class").nodeValue - IE9+
+    }
+</script>
+</head>
+<body>
+    <div id="boxA" class="boxA" style="margin: 20px auto;" title="Tim hieu thuoc tinh cua node">
+        Tim hieu thuoc tinh cua node
+    </div>
+</body>
+</html>

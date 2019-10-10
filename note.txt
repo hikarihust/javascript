@@ -839,4 +839,13 @@ Node:
 
           return retnode;
       }
-      
+
+  Thuộc tính Attribute: Các thuộc tính của 1 đối tượng node
+    attributes: Lấy ra các thuộc tính của node, kết quả trả về là 1 NameNodeMap Object
+      Khi sử dụng thuộc tính attributes của node thì sẽ có 1 số sự khác biệt trên các IE, trên thư viện jQuery thì đã sử lý các vấn đề này
+      Đối tượng NameNodeMap có các phương thức và thuộc tính đó là như
+        length: Không hỗ trợ trên IE7
+        getNamedItem() -> Thu được 1 node, node thì có các phương thức như nodeName, nodeValue
+        item()
+        Chỉ từ IE8 trở lên thì mới có thể gán giá trị vào cho 1 thuộc tính, còn IE7 thì không thực hiện được
+        removeAttribute: IE8+
