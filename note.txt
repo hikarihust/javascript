@@ -849,3 +849,10 @@ Node:
         item()
         Chỉ từ IE8 trở lên thì mới có thể gán giá trị vào cho 1 thuộc tính, còn IE7 thì không thực hiện được
         removeAttribute: IE8+
+
+  
+  Thuộc tính childNodes: Lấy ra tập hợp các node con của 1 node nào đó, kết quả thu được là đối tượng NodeList
+    IE8 trở về trước thì NodeList thu được không có đối tượng text giống như IE9 và Chrome, do khi thao tác với các node con thì cần chú ý 
+      đến giá trị "#text" của nodeName khi thực hiện các thao tác như: nodes.item(i).nodeName !== "#text"
+    nodeName: node có tên là gì: H1, DIV, P...
+      Đây cũng là Attribute của 1 node
