@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/01.css" />
+<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+<title>Untitled Document</title>
+<script type="text/javascript">
+    window.onload = function() {
+        // var elements   = document.getElementsByTagName("div");
+        var boxA          = document.getElementById("boxA");
+        console.log(boxA);                      // Một phần tử HTMLDivElement
+        var elements      = boxA.getElementsByTagName("div");
+        console.log(elements);                  // Tập hợp các thẻ html HTMLCollection - nodeList
+
+        if (elements.length > 0) {
+            console.log(elements.length);
+            console.log("Danh sách các thẻ div");
+            for (let i = 0; i < elements.length; i++) {
+                console.log(elements.item(i));
+                elements.item(i).style.color = "red";
+            }
+        }
+    }
+</script>
+</head>
+<body>
+    <div id="boxA" class="boxA" style="margin: 20px auto;">
+        <h1 class="title">Thuộc tính của NODE</h1>
+        <p class="content">Lorem ipsum dolor ...commodo consequat.</p>
+        <div class="author">Quang</div>
+        <div class="website">quangvlog</div>
+    </div>
+    
+    <div id="abc"> DIV class=abc</div>
+    <div id="bef"> DIV class=abc</div>
+</body>
+</html>

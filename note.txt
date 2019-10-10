@@ -813,4 +813,10 @@ Node:
     console.log($("#boxA")) -> thu được 1 đối tượng jQuery
     Mỗi thẻ của html đều là 1 đối tượng, nó có các phương thức và thuộc tính
   
-  
+  getElementsByTagName:
+    Giúp lấy được các thẻ html bởi tên của các thẻ đó
+    Tập hợp các thẻ html thu được(HTMLCollection || nodeList) -> Tập hợp các thẻ html
+    Có thể lấy ra được tất cả các thẻ div ở 1 trang html có thể lấy dc các thẻ div ở trong 1 vùng nào đó của trang html
+    Khi tập hợp các phần tử/nodeList nó là 1 đối tượng -> có thể sử dụng các phương thức hay thuộc tính của nodeList
+      Thuộc tính: length
+      method: item(number index)
