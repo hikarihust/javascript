@@ -797,3 +797,20 @@ DOM: Document Object Model -> kiểu đối tượng tài liệu
     Text node: Ở trong text node thì sẽ không còn có node nào khác
   Truy cập node(phần tử html):
     Truy cập qua id, tagname, class 
+
+Node:
+  getElementByID:
+    var boxA = document.getElementById("boxA"); // -> Thu được node
+    console.log(boxA.id);                            -> Truy cập thuộc tính của node
+      boxA                    
+    console.log(boxA);
+      <div id="boxA" class="boxA">
+        <h1 class="title">Thuộc tính của NODE</h1>        
+        <div id="author">Quang</div>    
+        <p id="website">quangvlog.vn</p>
+      </div>
+
+    console.log($("#boxA")) -> thu được 1 đối tượng jQuery
+    Mỗi thẻ của html đều là 1 đối tượng, nó có các phương thức và thuộc tính
+  
+  

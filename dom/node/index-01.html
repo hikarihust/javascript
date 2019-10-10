@@ -7,20 +7,19 @@
 <title>Untitled Document</title>
 <script type="text/javascript">
     window.onload = function() {
-        console.log($("#boxA"));
-        console.log(jQuery('<div id="author">Quang</div>'));  // -> Thu được 1 dối tượng jQuery
-
-        console.log(document);
-
-        var boxA = document.getElementById("boxA"); // -> Thu được node
-        console.log(boxA);
-        boxA.style.color = "red";
+        var title   = document.getElementById("title");
+        var author  = document.getElementById("author");
+        var website = document.getElementById("website");
+        console.log(title);
+        console.log(title.id);          // Truy cập thuộc tính của node
+        console.log(author);
+        console.log(website);
     }
 </script>
 </head>
 <body>
     <div id="boxA" class="boxA">
-        <h1 class="title">Thuộc tính của NODE</h1>        
+        <h1 id="title">Thuộc tính của NODE</h1>        
         <div id="author">Quang</div>    
         <p id="website">quangvlog.vn</p>
     </div>
