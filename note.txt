@@ -856,3 +856,10 @@ Node:
       đến giá trị "#text" của nodeName khi thực hiện các thao tác như: nodes.item(i).nodeName !== "#text"
     nodeName: node có tên là gì: H1, DIV, P...
       Đây cũng là Attribute của 1 node
+
+  FirstNode - lastNode: Lấy node đầu tiên trong tập hợp các node con
+    firstChild: Lấy ra phần tử node con đầu tiên
+    nextSibling: Khi sử dụng firstChild để lấy ra phần tử đầu tiên trên trình duyệt IE9+ thì nên sử dụng thêm nextSibling ở sau nextSibling
+      -> Lấy phần tử kế tiếp của node mà mình đang truy vấn
+    lastNode: Lấy ra phần tử node con cuối cùng
+    previousSibling >< nextSibling
