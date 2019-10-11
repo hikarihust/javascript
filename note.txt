@@ -886,3 +886,11 @@ Node:
       muốn copy. Giá trị true có nghĩa là lấy tất cả
     Phương thức này được dùng kết hợp appendChild đê cloneNode 1 node nào đó rồi appendChild đến 1 node mình muốn thêm node đã 
       clone đó
+  
+  Phương thức removeChild: Remove đi 1 node con nào đó
+              removeNode: Chỉ hoạt động được trên IE. Tham số truyền vào là boolean removeChildren(true/false). Nếu là true thì
+                remove cả các node con ở bên trong
+              replaceChild(Node newChild, Node refChild): Thay thế 1 node bằng 1 node khác 
+                Nó là sự kết hợp giữa appendChild và removeNode. Node dùng để thay thế sẽ biến mất ở vị trí cũ và được dùng để 
+                  thế vào vị trí node xóa đi
+              insertBefore(Node newChild, Node refChild): Thêm 1 node vào 1 node mà chúng ta đã xác định
