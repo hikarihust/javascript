@@ -879,3 +879,10 @@ Node:
     hasChildNodes() tìm xem có các node con ở trong 1 node nào đó hay không, trả về 2 giá trị true hoặc false
       node con có thể là node text hoặc 1 node khác(thẻ html)
     appendChild(): Thêm 1 node vào trong 1 node nào đó, sẽ thực hiện chuyển node con đó vào trong vị trí làm con của node cha
+
+  Phương thức cloneNode
+    Thực hiện copy 1 node nào đó, node cũ không bị mất đi. Đối với appendChild thì node cũ sẽ bị mất đi
+    Tham số truyền vào là boolean(true/false) deep cho biết là chỉ lấy node đó thôi hay là lấy hết tất cả các node khác nằm trong node mình
+      muốn copy. Giá trị true có nghĩa là lấy tất cả
+    Phương thức này được dùng kết hợp appendChild đê cloneNode 1 node nào đó rồi appendChild đến 1 node mình muốn thêm node đã 
+      clone đó
