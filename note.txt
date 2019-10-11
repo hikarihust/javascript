@@ -867,3 +867,8 @@ Node:
   parentNode - parentElement : Trả về phần tử cha chứa node mình đang truy cập
     parentElement hỗ trợ IE9+,parentNode thì hỗ trợ trên tất cả các trình duyệt
     boxA_parent.style.cssText -> Lấy ra được giá trị nằm trong thuộc tính style của phần tử 
+  
+  Phương thức hasChildNode - appendChild
+    hasChildNodes() tìm xem có các node con ở trong 1 node nào đó hay không, trả về 2 giá trị true hoặc false
+      node con có thể là node text hoặc 1 node khác(thẻ html)
+    appendChild(): Thêm 1 node vào trong 1 node nào đó, sẽ thực hiện chuyển node con đó vào trong vị trí làm con của node cha
