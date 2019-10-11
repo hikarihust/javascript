@@ -863,3 +863,7 @@ Node:
       -> Lấy phần tử kế tiếp của node mà mình đang truy vấn
     lastNode: Lấy ra phần tử node con cuối cùng
     previousSibling >< nextSibling
+
+  parentNode - parentElement : Trả về phần tử cha chứa node mình đang truy cập
+    parentElement hỗ trợ IE9+,parentNode thì hỗ trợ trên tất cả các trình duyệt
+    boxA_parent.style.cssText -> Lấy ra được giá trị nằm trong thuộc tính style của phần tử 
